@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.j4.cms.dao.ColumnDao">
+
+	<select id="get" resultType="Column">
+		select
+		  id,
+		  model_id as 'modelId',
+		  name,
+		  type,
+		  seq,
+		  remark,
+		  width,
+		  allow_blank as 'allowBlank',
+		  list_show as 'listShow',
+		  `sql`,
+		  status,
+		  mapping_data as 'mappingData'
+		from `column` where id = #{id}
+	</select>
+	<select id="findList" resultType="Column">
+		select
+		  id,
+		  model_id as 'modelId',
+		  name,
+		  type,
+		  seq,
+		  remark,
+		  width,
+		  allow_blank as 'allowBlank',
+		  list_show as 'listShow',
+		  `sql`,
+		  status,
+		  mapping_data as 'mappingData'
+		from `column` 
+		where model_id = #{modelId}
+		<if test="null != listShow">
+			and list_show = #{listShow}
+		</if>
+		order by seq asc
+	</select>
+	<insert id="insert">
+		insert into `column`
+            (
+             model_id,
+             name,
+             type,
+             seq,
+             remark,
+             width,
+             allow_blank,
+             list_show,
+             `sql`,
+             status,
+             mapping_data)
+		values (
+		        #{modelId},
+		        #{name},
+		        #{type},
+		        #{seq},
+		        #{remark},
+		        #{width},
+		        #{allowBlank},
+		        #{listShow},
+		        #{sql},
+		        #{status},
+		        #{mappingData})
+	</insert>
+	<update id="update">
+		update `column`
+		set
+		  model_id = #{modelId},
+		  name = #{name},
+		  type = #{type},
+		  seq = #{seq},
+		  remark = #{remark},
+		  width = #{width},
+		  allow_blank = #{allowBlank},
+		  list_show = #{listShow},
+		  `sql` = #{sql},
+		  status = #{status},
+		  mapping_data = #{mappingData}
+		where id = #{id}
+	</update>
+	
+	<delete id="delete">
+		delete from `column` where id = #{id}
+	</delete>
+	<delete id="deleteBy">
+		delete from `column` where model_id = #{modelId}
+	</delete>
+</mapper>

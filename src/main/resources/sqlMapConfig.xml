@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<setting name="cacheEnabled" value="true" />
+		<setting name="lazyLoadingEnabled" value="false" />
+		<setting name="useColumnLabel" value="true" />
+		<setting name="useGeneratedKeys" value="false" />
+		<setting name="autoMappingBehavior" value="PARTIAL" />
+		<setting name="defaultExecutorType" value="SIMPLE" />
+		<setting name="defaultStatementTimeout" value="25000" />
+		<setting name="safeRowBoundsEnabled" value="false" />
+		<setting name="mapUnderscoreToCamelCase" value="false" />
+		<setting name="localCacheScope" value="SESSION" />
+		<setting name="jdbcTypeForNull" value="OTHER" />
+		<setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString" />
+	</settings>
+	<typeAliases>
+		<typeAlias alias="Model" type="com.j4.cms.obj.Model" />
+		<typeAlias alias="Column" type="com.j4.cms.obj.Column" />
+		<typeAlias alias="Cfg" type="com.j4.cms.obj.Cfg" />
+		<typeAlias alias="Data" type="com.j4.cms.obj.Data" />
+		<typeAlias alias="Node" type="com.j4.cms.obj.Node" />
+		
+	</typeAliases>
+
+	<!-- - - - - - - 数据库环境配置- - - - - - - - - -->
+	<environments default="environments">
+		<environment id="j4">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver" />
+				<property name="url" value="jdbc:mysql://localhost:3306/easycms" />
+				<property name="username" value="root" />
+				<property name="password" value="root" />
+				<!--在任意时间存在的活动(也就是正在使用)连 接的数量。默认值:10 -->
+				<property name="poolMaximumActiveConnections" value="50" />
+				<!--任意时间存在的空闲连接数 -->
+				<property name="poolMaximumIdleConnections" value="5" />
+				<property name="poolPingEnabled" value="true"/>
+                <property name="poolPingQuery" value="select now()"/>
+                <property name="poolPingConnectionsNotUsedFor" value="3600000"/>
+			</dataSource>
+		</environment>
+	</environments>
+
+
+	<!-- - - - - - - -映射文件路径- - - - - - -->
+	<mappers>
+		<mapper resource="com/j4/common/mapper/common_SqlMap.xml" />
+		<mapper resource="com/j4/cms/mapper/ModelMapper.xml" />
+		<mapper resource="com/j4/cms/mapper/ColumnMapper.xml" />
+		<mapper resource="com/j4/cms/mapper/CfgMapper.xml" />
+		<mapper resource="com/j4/cms/mapper/DataMapper.xml" />
+		<mapper resource="com/j4/cms/mapper/CountMapper.xml" />
+	</mappers>
+
+</configuration>  

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.j4.cms.dao.ModelDao">
+
+	<select id="get" resultType="Model">
+		select
+		  id,
+		  name,
+		  table_name as 'tableName',
+		  remark,
+		  leaf,
+		  seq,
+		  parent_id as 'parentId',
+		  nav
+		from model where id = #{id}
+	</select>
+	<!-- <select id="getBy" resultType="Model">
+		select
+		  id,
+		  name,
+		  table_name as 'tableName',
+		  remark,
+		  leaf,
+		  seq,
+		  parent_id as 'parentId',
+		  nav
+		from model where code = #{code}
+		order by seq asc
+	</select> -->
+	<select id="getByParentId" resultType="Model">
+		select
+		  id,
+		  name,
+		  table_name as 'tableName',
+		  remark,
+		  leaf,
+		  seq,
+		  parent_id as 'parentId',
+		  nav
+		from model where parent_id = #{parentId}
+		order by seq asc
+	</select>
+	<select id="findList" resultType="Model">
+		select
+		  id,
+		  name,
+		  table_name as 'tableName',
+		  remark,
+		  leaf,
+		  seq,
+		  parent_id as 'parentId',
+		  nav
+		from model
+		order by seq asc
+	</select>
+	<insert id="insert" useGeneratedKeys="true" keyProperty="id">
+		insert into model
+            (
+             name,
+             table_name,
+             remark,
+             leaf,
+             seq,
+             parent_id,
+             nav)
+		values (
+		        #{name},
+		        #{tableName},
+		        #{remark},
+		        #{leaf},
+		        #{seq},
+		        #{parentId},
+		        #{nav})
+	</insert>
+	<update id="update">
+		update model
+		set
+		  name = #{name},
+		  table_name = #{tableName},
+		  remark = #{remark},
+		  leaf = #{leaf},
+		  seq = #{seq},
+		  parent_id = #{parentId},
+		  nav = #{nav}
+		where id = #{id}
+	</update>
+	
+	<select id="findTree" resultType="Node">
+		select
+		  id,
+		  name,
+		  table_name as 'tableName',
+		  parent_id as 'pId',
+		  nav
+		from model
+		order by seq asc
+	</select>
+	
+	<delete id="delete">
+		delete from model where id = #{id}
+	</delete>
+</mapper>
