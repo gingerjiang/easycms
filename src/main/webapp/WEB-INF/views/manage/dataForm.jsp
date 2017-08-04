@@ -45,23 +45,25 @@
 				        }
 			        });
 				},
-				errorContainer: "#messageBox",
-				errorPlacement: function(error, element) {
-					$("#messageBox").text("输入有误，请先更正。");
-					if (element.is(":checkbox")||element.is(":radio")||element.parent().is(".input-append")){
-						error.appendTo(element.parent().parent());
-					} else {
-						error.insertAfter(element);
-					}
-				}
+				 errorPlacement : function(error, element) {  
+				        if (element.is(":radio"))  
+				            error.appendTo(element.parent().next());  
+				        else if (element.is(":checkbox"))  
+				            error.appendTo(element.parent().parent());  
+				        else  
+				            error.appendTo(element.parent());   
+				    }
 			});
 		});
 		
 	</script>
 	<style type="text/css">
 		form {
-		    margin-left: -120px;
+		    margin-left: -100px;
 		}
+		label.error {
+    		display: inline;
+    	}
 	</style>
 </head>
 <body>
@@ -81,21 +83,47 @@
 			<c:choose>
 			   <c:when test="${'text' == item.type}">
 					<div class="control-group">
-						
 						<label class="control-label">
-						<c:if test="${'1' == item.allowBlank }"><font color="red">*</font></c:if>
+						<c:if test="${'0' == item.allowBlank }"><font color="red">*</font></c:if>
 						${item.name }:</label>
 						<div class="controls">
-							<input type="text" name="${mappingData }" maxlength="${item.length }" style="width:550px;" <c:if test="${'1' == item.allowBlank }">class="required"</c:if> value="${fns:getProperty(entity, mappingData)}"/>
+							<input type="text" name="${mappingData }" maxlength="${item.length }" style="width:550px;" <c:if test="${'0' == item.allowBlank }">class="required"</c:if> value="${fns:getProperty(entity, mappingData)}"/>
 							<span class="help-inline"> ${item.remark }</span>
 						</div>
 					</div>
 			   </c:when>
-			    <c:when test="${'number' == item.type}"> 
+			   <c:when test="${'number' == item.type}">
+			    	<div class="control-group">
+						<label class="control-label">
+						<c:if test="${'0' == item.allowBlank }"><font color="red">*</font></c:if>
+						${item.name }:</label>
+						<div class="controls">
+							<input type="text" name="${mappingData }" maxlength="${item.length }" style="width:550px;" class="number <c:if test="${'0' == item.allowBlank }">required</c:if>" value="${fns:getProperty(entity, mappingData)}"/>
+							<span class="help-inline"> ${item.remark }</span>
+						</div>
+					</div>
 			   </c:when>
-			    <c:when test="${'textarea' == item.type}"> 
+			   <c:when test="${'textarea' == item.type}">
+			    	<div class="control-group">
+						<label class="control-label">
+						<c:if test="${'0' == item.allowBlank }"><font color="red">*</font></c:if>
+						${item.name }:</label>
+						<div class="controls">
+			   				<textarea name="${mappingData }" maxlength="${item.length }" class="<c:if test="${'0' == item.allowBlank }">required</c:if>" rows="3" style="width: 600px;">${fns:getProperty(entity, mappingData)}</textarea>
+							<span class="help-inline"> ${item.remark }</span>
+						</div>
+					</div>
 			   </c:when>
-			    <c:when test="${'date' == item.type}"> 
+			   <c:when test="${'date' == item.type}">
+			   		<div class="control-group">
+						<label class="control-label">
+							<c:if test="${'0' == item.allowBlank }"><font color="red">*</font></c:if>
+							${item.name }:</label>
+							<div class="controls">
+				   				<input type="text" name="${mappingData }" class="Wdate <c:if test="${'0' == item.allowBlank }">required</c:if>" pattern="yyyy-MM-dd" style="width: 120px;" onclick="WdatePicker({dateFmt:'yyyy-MM-dd',isShowClear:false});" value="${fns:getProperty(entity, mappingData)}"/>
+								<span class="help-inline"> ${item.remark }</span>
+							</div>
+					</div>
 			   </c:when>
 			    <c:when test="${'editor' == item.type}">
 			    	<div class="control-group">
@@ -116,9 +144,7 @@
 			</c:choose>
 		
 		</c:forEach>
-		<div class="form-actions">
-			<input id="btnSubmit" class="btn btn-primary" type="submit" value="保 存"/>&nbsp;
-		</div>
+			<input id="btnSubmit" class="btn btn-primary" style="right: 0;position: fixed;bottom: 2%;" type="submit" value="保 存"/>&nbsp;
 	</form>
 </body>
 </html>
