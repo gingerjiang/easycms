@@ -23,20 +23,21 @@
 											<a href="#"><img src="${ctx }/assets/images/menu-icon${status.count}.png" alt="menu-icon1" /> ${item.name} <i class="fa fa-angle-right" aria-hidden="true"></i></a>
 											<ul class="dropdown-menu right">
 												<c:forEach var="child" items="${item.childs}" varStatus="status">
-													<li><a href="${ctx}/index?action=list&modelId=${child.id}">${child.name }</a></li>
+													<li><a href="${ctx}/front/list/${child.id}.html">${child.name }</a></li>
 												</c:forEach>
 											</ul>
 										</li>
 									</c:forEach>
 									<li>
-										<a href="#"><img src="assets/images/menu-icon11.png" alt="menu-icon2" />All Categories</a>
+										<a href="#"><img src="${ctx }/assets/images/menu-icon11.png" alt="menu-icon2" />Java easycms</a>
 									</li>
 								</ul>
 							</li>
-							<li><a href="index">首页</a></li>
+							<li><a href="${ctx}/index.html">首页</a></li>
 							<li><a href="#">特卖</a></li>
 							<li><a href="#">广告</a></li>
 							<li><a href="#">关于我们</a></li>
+							<li><a href="#">cache：${date }</a></li>
 						</ul>
 						<!-- /.navbar-collapse -->
 					</div>

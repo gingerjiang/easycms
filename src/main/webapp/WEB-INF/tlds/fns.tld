@@ -17,5 +17,4 @@
 		<function-signature>java.lang.String getProperty(com.j4.cms.obj.Data, java.lang.String)</function-signature>
 		<example>${fns:getProperty(data, name)}</example>
 	</function>
-
 </taglib>

@@ -2,7 +2,7 @@
 
 			<div class="col-sm-3">
 				<div class="logo">
-					<h6><img src="assets/images/logo.png" alt="logo" /></h6>
+					<h6><img src="${ctx }/assets/images/logo.png" alt="logo" /></h6>
 				</div>
 			</div>
 			<div class="col-sm-6">
@@ -38,7 +38,7 @@
 							<a href="#" data-toggle="dropdown" data-hover="dropdown"><i class="icon-basket-loaded icons" aria-hidden="true"></i></a><span class="subno">2</span><strong>Your Cart</strong>
 							<div class="dropdown-menu  cart-outer">
 								<div class="cart-content">
-									<div class="col-sm-4 col-md-4"><img src="assets/images/elec-img4.jpg" alt="13"></div>
+									<div class="col-sm-4 col-md-4"><img src="${ctx }/assets/images/elec-img4.jpg" alt="13"></div>
 									<div class="col-sm-8 col-md-8">
 										<div class="pro-text">
 											<a href="#">Apple Macbook Retina 23’’ </a>
@@ -48,7 +48,7 @@
 									</div>
 								</div>
 								<div class="cart-content">
-									<div class="col-sm-4 col-md-4"><img src="assets/images/elec-img3.jpg" alt="13"></div>
+									<div class="col-sm-4 col-md-4"><img src="${ctx }/assets/images/elec-img3.jpg" alt="13"></div>
 									<div class="col-sm-8 col-md-8">
 										<div class="pro-text">
 											<a href="#">Apple Macbook Retina 23’’ </a>

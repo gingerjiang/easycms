@@ -5,6 +5,11 @@
 	<title>日志管理</title>
 	<%@include file="/WEB-INF/views/include/head.jsp" %>
 	<%@include file="/WEB-INF/views/include/jqgrid.jsp" %>
+	<style type="text/css">
+		form {
+		    margin: 0 0 6px;
+		}
+	</style>
 	<script type="text/javascript">
 	
 	var colModel = ${colModel};
@@ -41,8 +46,8 @@
 		.append("&nbsp;&nbsp;<input class='btn' type='button' value='撤回' onclick='back()'/>")
 		.append("&nbsp;&nbsp;<input class='btn' type='button' value='删除' onclick='del()'/>");
 		$(window).resize(function() {
-			grid.jqGrid('setGridWidth',$(window).width()-2);
-			grid.jqGrid('setGridHeight',$(window).height()-150);
+			grid.jqGrid('setGridWidth',$(document).width()-2);
+			grid.jqGrid('setGridHeight',$(document).height()-160);
 		}).resize();
 	});
 	function searchForm() {

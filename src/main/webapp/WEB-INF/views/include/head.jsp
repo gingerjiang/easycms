@@ -9,8 +9,12 @@
 <script src="${ctxStatic}/layer/layer.js" language="javascript" type="text/javascript"></script>
 <script src="${ctxStatic}/jquery/jquery.form.min.js" language="javascript" type="text/javascript"></script>
 <script src="${ctxStatic}/js/comm.js" language="javascript" type="text/javascript"></script>
+
+
 <link href="${ctxStatic}/bootstrap2/css_default/bootstrap.css" type="text/css" rel="stylesheet" />
 <script src="${ctxStatic}/bootstrap2/js/bootstrap.min.js" type="text/javascript"></script>
+
+
 <script src="${ctxStatic}/jerichotab/js/jquery.jerichotab.js" type="text/javascript"></script>
 <link href="${ctxStatic}/jerichotab/css/jquery.jerichotab.css" rel="stylesheet" />
 

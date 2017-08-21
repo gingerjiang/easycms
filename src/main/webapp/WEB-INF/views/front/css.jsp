@@ -1,5 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
-
 	<!-- Latest Bootstrap min CSS -->
 	<link rel="stylesheet" href="${ctx}/assets/css/bootstrap.min.css" type="text/css">
 	<!-- Dropdownhover CSS -->

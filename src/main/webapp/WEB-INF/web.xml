@@ -5,7 +5,7 @@
 	id="WebApp_ID" version="3.0">
 	<display-name>j4</display-name>
 	<welcome-file-list>
-		<welcome-file>login.jsp</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 
 	<filter>
@@ -29,12 +29,63 @@
 			<param-value>/WEB-INF/shiro.ini</param-value>
 		</init-param>
 	</filter>
-
 	<filter-mapping>
 		<filter-name>ShiroFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	<!--ehcache 页面缓存过滤器,要在 UrlRewriteFilter前面 -->
+	<filter>
+		<filter-name>PageCachingFilter</filter-name>
+		<filter-class>net.sf.ehcache.constructs.web.filter.SimplePageCachingFilter</filter-class>
+		<init-param>
+			<param-name>cacheName</param-name>
+			<param-value>SimplePageCachingFilter</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>PageCachingFilter</filter-name>
+		<url-pattern>*.html</url-pattern>
+	</filter-mapping>
+<!-- 	<filter-mapping>
+		<filter-name>PageCachingFilter</filter-name>
+		<url-pattern>*.css</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>PageCachingFilter</filter-name>
+		<url-pattern>*.js</url-pattern>
+	</filter-mapping>
+ -->	<filter>
+		<filter-name>UrlRewriteFilter</filter-name>
+		<filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+		<!-- 自定义配置文件的路径,是相对context的路径,(默认位置 /WEB-INF/urlrewrite.xml) -->
+		<init-param>
+			<param-name>confPath</param-name>
+			<param-value>/WEB-INF/urlrewrite.xml</param-value>
+		</init-param>
+
+		<!-- 设置日志级别（将被记录到日志中） 可以为: TRACE, DEBUG, INFO (default), WARN, ERROR, FATAL, 
+			log4j, commons, slf4j, 比如 sysout:DEBUG（设置到控制台调试输出级别） (默认级别 WARN) -->
+		<init-param>
+			<param-name>logLevel</param-name>
+			<param-value>DEBUG</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>UrlRewriteFilter</filter-name>
+		<url-pattern>/front/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>UrlRewriteFilter</filter-name>
+		<url-pattern>/index.html</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+	</filter-mapping>
+
+
 	<session-config>
-		<session-timeout>99999999</session-timeout>
+		<session-timeout>30</session-timeout>
 	</session-config>
 </web-app>

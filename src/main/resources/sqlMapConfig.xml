@@ -22,7 +22,7 @@
 		<typeAlias alias="Cfg" type="com.j4.cms.obj.Cfg" />
 		<typeAlias alias="Data" type="com.j4.cms.obj.Data" />
 		<typeAlias alias="Node" type="com.j4.cms.obj.Node" />
-		
+		<typeAlias alias="Combo" type="com.j4.cms.obj.Combo" />
 	</typeAliases>
 
 	<!-- - - - - - - 数据库环境配置- - - - - - - - - -->
@@ -54,6 +54,7 @@
 		<mapper resource="com/j4/cms/mapper/CfgMapper.xml" />
 		<mapper resource="com/j4/cms/mapper/DataMapper.xml" />
 		<mapper resource="com/j4/cms/mapper/CountMapper.xml" />
+		<mapper resource="com/j4/cms/mapper/ComboMapper.xml" />
 	</mappers>
 
 </configuration>  

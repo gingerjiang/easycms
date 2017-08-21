@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang.StringUtils;
+import org.joda.time.DateTime;
 
 import com.j4.base.BaseServlet;
 import com.j4.cms.obj.Data;
@@ -15,7 +16,6 @@ import com.j4.cms.obj.Model;
 import com.j4.cms.service.DataService;
 import com.j4.cms.service.ModelService;
 import com.j4.common.obj.Ajax;
-import com.j4.util.StringUtil;
 @WebServlet("/index")
 public class IndexServlet extends BaseServlet {
 	/**
@@ -48,6 +48,8 @@ public class IndexServlet extends BaseServlet {
 	
 	public void index(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		this.common(request, response);
+		
+		
 		//设置主题市场打开
 		request.setAttribute("all_open", "all-open");
 		
@@ -107,6 +109,14 @@ public class IndexServlet extends BaseServlet {
 		request.getRequestDispatcher(prefix + "front/list.jsp").forward(request, response);
 	}
 	public void detail(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		//主题市场   菜单
+		List<Model> models = modelService.getByParentId(2);
+		for (Model model : models) {
+			List<Model> childs = modelService.getByParentId(model.getId());
+			model.setChilds(childs);
+		}
+		request.setAttribute("models", models);
+		//end
 		String modelId= request.getParameter("modelId");
 		Model model = modelService.get(Integer.parseInt(modelId));
 		request.setAttribute("model", model);
@@ -127,5 +137,7 @@ public class IndexServlet extends BaseServlet {
 			model.setChilds(childs);
 		}
 		request.setAttribute("models", models);
+		DateTime dateTime = new DateTime();  
+		request.setAttribute("date", dateTime.toString("yyyy/MM/dd HH:mm:ss.SSSa"));
 	}
 }

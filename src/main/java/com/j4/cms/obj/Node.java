@@ -1,5 +1,9 @@
 package com.j4.cms.obj;
 
+import java.util.List;
+
+import com.google.common.collect.Lists;
+
 public class Node {
 	
 	
@@ -9,6 +13,8 @@ public class Node {
 	private String modelId;
 	private String tableName;
 	private String nav;//是否导航
+	
+	private List<Node> nodes = Lists.newArrayList();
 	
 	public int getId() {
 		return id;
@@ -45,6 +51,12 @@ public class Node {
 	}
 	public void setNav(String nav) {
 		this.nav = nav;
+	}
+	public List<Node> getNodes() {
+		return nodes;
+	}
+	public void setNodes(List<Node> nodes) {
+		this.nodes = nodes;
 	}
 	
 }

@@ -10,7 +10,7 @@
 						<li>
 							<div class="dropdown">
 								<a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
-								   <img src="assets/images/eng-flg.jpg" alt="eng-flg"> English <i class="fa fa-angle-down" aria-hidden="true"></i>
+								   <img src="${ctx }/assets/images/eng-flg.jpg" alt="eng-flg"> English <i class="fa fa-angle-down" aria-hidden="true"></i>
 								</a>
 								<ul class="dropdown-menu">
 									<li><a href="#">English</a></li>

@@ -66,8 +66,8 @@ public class TableServlet extends BaseServlet {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+			this.write(new Ajax(false, "出现错误"+e.getMessage()), response);
 		}
-		this.write(new Ajax(false, "出现错误"), response);
 	}
 
 	public void index(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -116,6 +116,10 @@ public class TableServlet extends BaseServlet {
 		column.setType(type);
 		String mappingData = request.getParameter("mappingData");
 		column.setMappingData(mappingData);
+		
+		String sql = request.getParameter("sql");
+		column.setSql(sql);
+		
 		String seq = request.getParameter("seq");
 		if (StringUtils.isNumeric(seq)) {
 			column.setSeq(Integer.parseInt(seq));

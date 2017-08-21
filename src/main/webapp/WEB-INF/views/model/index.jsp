@@ -10,17 +10,16 @@
 	
 	<style type="text/css">
 	.divRight {
-		float: left;
 		background-color: White;
 		border: double 0px #eee;
 		height: 100%;
 	}
 	.divLeft {
-		float: left;
 		background-color: White;
 		border: double 0px #eee;
 		overflow-y: auto;
 		height: 100%;
+		width: 260px;
 	}
 </style>
 	<script type="text/javascript">
@@ -77,7 +76,7 @@
 	        		multiselect: true
 	            });
 	        	$(window).resize(function(){
-	        		grid.jqGrid('setGridWidth',w - 200);
+	        		grid.jqGrid('setGridWidth',w - 320);
 	        		grid.jqGrid('setGridHeight',h);
 	        	}).resize();
 	        	
@@ -172,7 +171,8 @@
 	</script>
 </head>
 <body>
-    <div class="divLeft">
+<div class="row">
+    <div class="span divLeft">
     	<div class="accordion-heading" >
 	    	<label class="accordion-toggle" style="background-color:#24659D;margin-bottom: 0px;color:#fff;">模型树
 	    	<i style="margin-left:10px;" class="icon-white icon-refresh pull-right" onclick="refreshTree();" title='刷新'></i>
@@ -184,8 +184,9 @@
         <ul id="modelTree" class="ztree">
 	    </ul>
     </div>
-    <div class="divRight">
+    <div class="span divRight">
     	<table id="grid"></table>
     </div>
+</div>
 </body>
 </html>

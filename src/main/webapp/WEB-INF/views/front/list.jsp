@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title></title>
 	<%@include file="/WEB-INF/views/front/css.jsp" %>
 	<link rel="stylesheet" href="${ctx}/assets/css/slider.css" type="text/css">
@@ -39,7 +40,7 @@
 				<div class="col-sm-3 col-md-3">
 					<div class="weight">
 						<div class="ads-lft">
-						<img src="assets/images/add-banner2.jpg" alt="add banner"> </div>
+						<img src="${ctx }/assets/images/add-banner2.jpg" alt="add banner"> </div>
 					</div>
 					<div class="weight">
 						<div class="title">
@@ -49,7 +50,7 @@
 							<ul>
 								<li>
 									<div class="e-product">
-										<div class="pro-img"> <img src="assets/images/products/digital/5.jpg" alt="2"> </div>
+										<div class="pro-img"> <img src="${ctx }/assets/images/products/digital/5.jpg" alt="2"> </div>
 										<div class="pro-text-outer"> <span>Macbook, Laptop</span>
 											<a href="#">
 												<h4> Apple Macbook Retina 23’ </h4>
@@ -60,7 +61,7 @@
 								</li>
 								<li>
 									<div class="e-product">
-										<div class="pro-img"> <img src="assets/images/products/digital/9.jpg" alt="2"> </div>
+										<div class="pro-img"> <img src="${ctx }/assets/images/products/digital/9.jpg" alt="2"> </div>
 										<div class="pro-text-outer"> <span>Macbook, Laptop</span>
 											<a href="#">
 												<h4> Apple Macbook Retina 23’ </h4>
@@ -71,7 +72,7 @@
 								</li>
 								<li>
 									<div class="e-product">
-										<div class="pro-img"> <img src="assets/images/products/digital/12.jpg" alt="2"> </div>
+										<div class="pro-img"> <img src="${ctx }/assets/images/products/digital/12.jpg" alt="2"> </div>
 										<div class="pro-text-outer"> <span>Macbook, Laptop</span>
 											<a href="#">
 												<h4> Apple Macbook Retina 23’ </h4>
@@ -112,9 +113,13 @@
 							<div class="col-xs-12 col-sm-5 col-md-5">
 								<!-- .pro-img -->
 								<div class="pro-img"> <img src="${ctx }/${item.c5 }" alt="2">
-									<sup class="sale-tag">sale!</sup>
+									<sup class="sale-tag">hot!</sup>
 									<!-- .hover-icon -->
-									<div class="hover-icon"> <a href="#"><span class="icon icon-Heart"></span></a> <a href="#"><span class="icon icon-Search"></span></a> <a href="#"><span class="icon icon-Restart"></span></a> </div>
+									<div class="hover-icon">
+										<a href="${ctx }/front/detail/${item.modelId }/${item.id }.html"><span class="icon icon-Heart"></span></a>
+										<a href="${ctx }/front/detail/${item.modelId }/${item.id }.html"><span class="icon icon-Search"></span></a>
+										<a href="${ctx }/front/detail/${item.modelId }/${item.id }.html"><span class="icon icon-Restart"></span></a>
+									</div>
 									<!-- /.hover-icon -->
 								</div>
 								<!-- /.pro-img -->
@@ -122,7 +127,7 @@
 							<div class="col-xs-12 col-sm-7 col-md-7">
 								<div class="pro-text-outer list-pro-text">
 									<span>${item.c2 }</span>
-									<a href="#">
+									<a href="${ctx }/front/detail/${item.modelId }/${item.id }.html">
 										<h4> ${item.c1 } </h4>
 									</a>
 									<div class="star2">
@@ -132,15 +137,15 @@
 											<li class="yellow-color"><i class="fa fa-star" aria-hidden="true"></i></li>
 											<li class="yellow-color"><i class="fa fa-star" aria-hidden="true"></i></li>
 											<li><i class="fa fa-star" aria-hidden="true"></i></li>
-											<li><a href="#">10 review(s)</a></li>
-											<li><a href="#"> Add your review</a></li>
+											<li><a href="${ctx }/front/detail/${item.modelId }/${item.id }.html">10 review(s)</a></li>
+											<li><a href="${ctx }/front/detail/${item.modelId }/${item.id }.html"> Add your review</a></li>
 										</ul>
 									</div>
 									<p class="wk-price">¥${item.c3 } </p>
 									<p>${item.c9 }</p>
-									<a href="#" class="add-btn">购买</a>
-									<a href="#" class="add-btn2"><span class="icon icon-Heart"></span></a>
-									<a href="#" class="add-btn2"><span class="icon icon-Restart"></span></a>
+									<a href="${ctx }/front/detail/${item.modelId }/${item.id }.html" class="add-btn">查看</a>
+									<a href="${ctx }/front/detail/${item.modelId }/${item.id }.html" class="add-btn2"><span class="icon icon-Heart"></span></a>
+									<a href="${ctx }/front/detail/${item.modelId }/${item.id }.html" class="add-btn2"><span class="icon icon-Restart"></span></a>
 								</div>
 							</div>
 						</div>
@@ -180,23 +185,13 @@
 				<div class="copayright">
 					<div class="row">
 						<div class="col-xs-12 col-sm-6 col-md-6">Copyright &copy; 2017.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></div>
-						<div class="text-right col-xs-12 col-sm-6 col-md-6"> <img src="assets/images/payment-img.jpg" alt="payment-img" /> </div>
+						<div class="text-right col-xs-12 col-sm-6 col-md-6"> <img src="${ctx }/assets/images/payment-img.jpg" alt="payment-img" /> </div>
 					</div>
 				</div>
 				<!-- /copayright -->
 			</div>
 		</div>
 	</footer>
-	<!-- sticky-socia -->
-	<aside id="sticky-social">
-		<ul>
-			<li><a href="#" class="fa fa-facebook" target="_blank"><span><i class="fa fa-facebook" aria-hidden="true"></i> Facebook</span></a></li>
-			<li><a href="#" class="fa fa-twitter" target="_blank"><span><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</span></a></li>
-			<li><a href="#" class="fa fa-rss" target="_blank"><span><i class="fa fa-rss" aria-hidden="true"></i> RSS</span></a></li>
-			<li><a href="#" class="fa fa-pinterest-p" target="_blank"><span><i class="fa fa-pinterest-p" aria-hidden="true"></i> Pinterest</span></a></li>
-			<li><a href="#" class="fa fa-share-alt" target="_blank"><span><i class="fa fa-share-alt" aria-hidden="true"></i> Flickr</span></a></li>
-		</ul>
-	</aside>
 	<!-- /sticky-socia -->
 	<p id="back-top"> <a href="#top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a> </p>
 	<%@include file="/WEB-INF/views/front/js.jsp" %>

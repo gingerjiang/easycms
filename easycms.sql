@@ -64,7 +64,7 @@ CREATE TABLE `column` (
   `status` int(11) DEFAULT '0' COMMENT '状态',
   `mapping_data` varchar(20) NOT NULL COMMENT '映射字段',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=262 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=263 DEFAULT CHARSET=utf8;
 
 /*Data for the table `column` */
 
@@ -274,6 +274,24 @@ insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allo
 insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (258,33,'规格','text',4,'',100,'0','1',NULL,0,'c5');
 insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (259,33,'名称','text',1,'',200,'0','1',NULL,0,'c1');
 insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (260,33,'详情','editor',9,'',200,'1','0',NULL,0,'c15');
+insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (261,15,'淘宝链接','text',6,'',100,'0','0',NULL,0,'c6');
+insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (262,13,'测试sql','combo',6,'',100,'0','1','select   type,   value from combo where type = 1',0,'c4');
+
+/*Table structure for table `combo` */
+
+CREATE TABLE `combo` (
+  `type` int(11) NOT NULL COMMENT '类型',
+  `value` varchar(20) NOT NULL COMMENT '值',
+  `num` int(11) DEFAULT NULL COMMENT '序号'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+/*Data for the table `combo` */
+
+insert  into `combo`(`type`,`value`,`num`) values (1,'输入值',2);
+insert  into `combo`(`type`,`value`,`num`) values (1,'花生棒',1);
+insert  into `combo`(`type`,`value`,`num`) values (2,'手机',1);
+insert  into `combo`(`type`,`value`,`num`) values (2,'电脑',2);
+insert  into `combo`(`type`,`value`,`num`) values (1,'花生壳',3);
 
 /*Table structure for table `data_0` */
 
@@ -306,9 +324,9 @@ CREATE TABLE `data_0` (
 
 /*Data for the table `data_0` */
 
-insert  into `data_0`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (1,'samsung galaxy三星盖乐世','assets/images/home-header1.jpg','500',NULL,'New Arrivals','Only from $520 ','iPhone 7 dramatically improves the most important ',NULL,'#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'34',1,'2017-07-30 13:14:57','admin','2017-07-30 13:34:34','admin');
-insert  into `data_0`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (2,'new collection','assets/images/home-header2.jpg','20',NULL,'Phantom','Only from 920 ','iPhone 7 dramatically improves the most important ',NULL,'#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'34',1,'2017-07-30 13:16:05','admin','2017-08-01 21:09:27','admin');
-insert  into `data_0`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (3,'Divoom brands','assets/images/home-header3.jpg','10',NULL,'Voombox 2.0','Only from $11169 ','iPhone 7 dramatically improves the most important ',NULL,'#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'34',1,'2017-07-30 13:16:48','admin','2017-08-01 21:12:19','admin');
+insert  into `data_0`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (1,'中英字幕word文档','assets/images/home-header6.jpg','10',NULL,'看电影学英语','仅需 ¥10','兴趣驱动，记忆力提高百倍',NULL,'https://item.taobao.com/item.htm?id=555369708429',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'34',1,'2017-07-30 13:14:57','admin','2017-08-10 21:08:20','admin');
+insert  into `data_0`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (2,'花生棒Pro','assets/images/home-header5.jpg','128',NULL,'内网穿透','仅需 ¥128 送电源','你在任何地方都可以访问你家的程序',NULL,'https://item.taobao.com/item.htm?id=556854194022',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'34',1,'2017-07-30 13:16:05','admin','2017-08-10 20:56:11','admin');
+insert  into `data_0`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (3,'Raspberry Pi 3 Model B','assets/images/home-header4.jpg','199',NULL,'树莓派3 B','仅需 ¥199','内置Wi-Fi和蓝牙',NULL,'https://item.taobao.com/item.htm?id=556854194022',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'34',1,'2017-07-30 13:16:48','admin','2017-08-10 20:47:43','admin');
 insert  into `data_0`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (4,'Headphone','beat brand','150','banner-img banner-img3','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'35',1,'2017-07-30 14:25:42','admin',NULL,NULL);
 insert  into `data_0`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (5,'Smartwatch','sony brand','220','banner-img banner-img2','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'35',1,'2017-07-30 14:26:38','admin',NULL,NULL);
 insert  into `data_0`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (6,'Tablet mini 3','Samsung','700','banner-img','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'35',1,'2017-07-30 14:27:07','admin',NULL,NULL);
@@ -341,7 +359,7 @@ CREATE TABLE `data_1` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `update_by` varchar(20) DEFAULT NULL COMMENT '更新人',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=267 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=269 DEFAULT CHARSET=utf8;
 
 /*Data for the table `data_1` */
 
@@ -385,8 +403,9 @@ insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c
 insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (260,'Apple Macbook Retina 23’ ','Apple','122',NULL,'assets/images/products/digital/20.jpg',NULL,NULL,NULL,'Typi non habent claritatem insitam, est usus legen',NULL,NULL,NULL,NULL,NULL,'<p>								</p><p>Typi non habent claritatem insitam, est usus legentis in iis qui facit \neorum claritatem. Investigationes demonstraverunt lectores legere me \nlius quod ii legunt saepius. Claritas est etiam processus.Typi non habent claritatem insitam, est usus legentis in iis qui facit \neorum claritatem. Investigationes demonstraverunt lectores legere me \nlius quod ii legunt saepius. Claritas est etiam processus.Typi non habent claritatem insitam, est usus legentis in iis qui facit \neorum claritatem. Investigationes demonstraverunt lectores legere me \nlius quod ii legunt saepius. Claritas est etiam processus.Typi non habent claritatem insitam, est usus legentis in iis qui facit \neorum claritatem. Investigationes demonstraverunt lectores legere me \nlius quod ii legunt saepius. Claritas est etiam processus.Typi non habent claritatem insitam, est usus legentis in iis qui facit \neorum claritatem. Investigationes demonstraverunt lectores legere me \nlius quod ii legunt saepius. Claritas est etiam processus.</p><p>						</p>',NULL,'13',1,'2017-08-02 20:35:50','admin','2017-08-02 20:38:30','admin');
 insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (263,'14吋笔记本','联想','10000',NULL,'assets/images/products/digital/20.jpg',NULL,NULL,NULL,'简介',NULL,NULL,NULL,NULL,NULL,'<p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p><br/></p>',NULL,'13',1,'2017-08-02 21:13:28','admin',NULL,NULL);
 insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (264,'14吋笔记本','联想','10000',NULL,'assets/images/products/digital/20.jpg',NULL,NULL,NULL,'简介',NULL,NULL,NULL,NULL,NULL,'<p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p><br/></p>',NULL,'13',1,'2017-08-02 21:13:29','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (265,'14吋笔记本','联想','10000',NULL,'assets/images/products/digital/20.jpg',NULL,NULL,NULL,'简介',NULL,NULL,NULL,NULL,NULL,'<p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p><br/></p>',NULL,'13',1,'2017-08-02 21:13:31','admin',NULL,NULL);
+insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (265,'14吋笔记本','联想','10000','花生壳','assets/images/products/digital/20.jpg',NULL,NULL,NULL,'简介',NULL,NULL,NULL,NULL,NULL,'<p>								</p><p><br/></p><p><br/></p><p><br/></p><p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p>						</p>',NULL,'13',1,'2017-08-02 21:13:31','admin','2017-08-09 21:54:45','admin');
 insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (266,'电子阅读器','亚马孙','122',NULL,'assets/images/products/digital/5.jpg',NULL,NULL,NULL,'水墨屏，不伤眼',NULL,NULL,NULL,NULL,NULL,'Amazon Kindle是由Amazon设计和销售的电子书阅读器（以及软件平台）。第一代Kindle于2007年11月19日发布，用户可以通过无线网络使用 Amazon Kindle 购买、下载和阅读电子书、报纸、杂志、博客及其他电子媒体。',NULL,'14',1,'2017-08-02 21:24:07','admin',NULL,NULL);
+insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (268,'花生棒Pro','oray上海贝锐信息科技股份有限公司','148',NULL,'/assets/images/products/oray/a.jpg','https://item.taobao.com/item.htm?id=556854194022',NULL,NULL,'购买送电源，花生棒适合没有公网ip，内含一个2G每月的花生壳内网账户，应用在网站，智能家居，设置简单稳定性好，简单好用，现货全国包邮',NULL,NULL,NULL,NULL,NULL,'<p>								</p><p><span style=\"color: rgb(108, 108, 108); font-family: tahoma, arial, &quot;Hiragino Sans GB&quot;, 宋体, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;\">购买送电源，花生棒适合没有公网ip，内含一个2G每月的花生壳内网账户，应用在网站，智能家居，设置简单稳定性好，简单好用，现货全国包邮</span></p><p>						</p>',NULL,'15',1,'2017-08-09 20:34:19','admin','2017-08-09 20:39:55','admin');
 
 /*Table structure for table `model` */
 
@@ -406,37 +425,37 @@ CREATE TABLE `model` (
 
 insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (1,'首页','data_0','首页各种栏目配置','\0',10,0,'1');
 insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (2,'主题市场','data_0','商品主题分类','\0',20,0,'1');
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (3,'电子 & 数码产品 ','data_1','','\0',10,2,'1');
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (4,'手机 & 配件','data_1','','\0',20,2,'1');
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (5,'家居 & 厨卫','data_1','','\0',30,2,'1');
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (6,'流行 & 服饰 ','data_1','','\0',40,2,'1');
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (7,'运动 & 户外','data_1','','\0',50,2,'1');
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (8,'珠宝 & 手表','data_1','','\0',60,2,'1');
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (9,'健康 & 美妆','data_1','','\0',70,2,'1');
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (10,'玩具 & 爱好','data_1','','\0',80,2,'1');
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (11,'书籍 & 办公 ','data_1','','\0',90,2,'1');
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (12,'照相机 & 摄像机','data_1','','\0',100,2,'1');
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (13,'笔记本','data_1','','\0',10,3,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (14,'Kindle','data_1','','\0',20,3,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (15,'iPhone','data_1','','\0',10,4,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (16,'安卓','data_1','','\0',20,4,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (17,'电脑桌','data_1','','\0',10,5,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (18,'电脑椅','data_1','','\0',20,5,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (19,'男女装','data_1','','\0',10,6,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (20,'男女鞋','data_1','','\0',20,6,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (21,'自行车','data_1','','\0',10,7,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (22,'跑步机','data_1','','\0',20,7,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (23,'项链','data_1','','\0',10,8,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (24,'卡西欧','data_1','','\0',20,8,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (25,'减肥','data_1','','\0',10,9,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (26,'面膜','data_1','','\0',20,9,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (27,'公仔','data_1','','\0',10,10,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (28,'高达','data_1','','\0',20,10,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (29,'Java必读书','data_1','','\0',10,11,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (30,'架构师','data_1','','\0',20,11,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (31,'尼康','data_1','','\0',10,12,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (32,'佳能','data_1','','\0',20,12,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (33,'索尼','data_1','','\0',20,12,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (3,'卡片电脑 & 树莓派 ','data_1','','\0',10,2,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (4,'内网穿透 & 花生壳','data_1','','\0',20,2,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (5,'Java & js','data_1','','\0',30,2,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (6,'Google & Guice','data_1','','\0',40,2,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (7,'MyBatis & MySQL','data_1','','\0',50,2,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (8,'Servlet & Tomcat','data_1','','\0',60,2,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (9,'JSP & JSTL','data_1','','\0',70,2,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (10,'jQuery & Ajax','data_1','','\0',80,2,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (11,'Html & CSS ','data_1','','\0',90,2,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (12,'Maven & Git','data_1','','\0',100,2,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (13,'Raspberry Pi','data_1','','\0',10,3,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (14,'Raspbian','data_1','','\0',20,3,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (15,'花生棒Pro','data_1','','\0',10,4,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (16,'花生壳','data_1','','\0',20,4,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (17,'JDK','data_1','','\0',10,5,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (18,'框架','data_1','','\0',20,5,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (19,'翻墙','data_1','','\0',10,6,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (20,'IOC注入','data_1','','\0',20,6,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (21,'ORM','data_1','','\0',10,7,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (22,'下载','data_1','','\0',20,7,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (23,'接口','data_1','','\0',10,8,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (24,'web容器','data_1','','\0',20,8,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (25,'教程','data_1','','\0',10,9,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (26,'模板','data_1','','\0',20,9,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (27,'插件','data_1','','\0',10,10,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (28,'异步','data_1','','\0',20,10,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (29,'html5','data_1','','\0',10,11,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (30,'css3','data_1','','\0',20,11,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (31,'架构','data_1','','\0',10,12,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (32,'库','data_1','','\0',20,12,NULL);
+insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (33,'版本管理','data_1','','\0',20,12,NULL);
 insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (34,'轮播图','data_0','','\0',10,1,NULL);
 insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (35,'中间3商品','data_0','','\0',20,1,NULL);
 insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (36,'本月热卖','data_0','','\0',30,1,NULL);

@@ -86,6 +86,13 @@
 			</div>
 		</div>
 		<div class="control-group">
+			<label class="control-label">下拉sql</label>
+			<div class="controls">
+				<input type="text" name="sql" maxlength="50" class="required" value="${entity.sql }" />
+				<span class="help-inline">例：select type,value from combo where type = 1</span>
+			</div>
+		</div>
+		<div class="control-group">
 			<label class="control-label">序号</label>
 			<div class="controls">
 				<input type="text" name="seq" maxlength="50" class="required" value="${entity.seq }" />
