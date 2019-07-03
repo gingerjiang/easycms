@@ -1,0 +1,88 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>ijk英语</title>
+<meta name="baidu-site-verification" content="LlIlr7oZf7" />
+<meta name="keywords" content="ijk英语 台词 字幕  word 剧本" />
+<meta name="description" content="最热英美剧，字幕剧本台词word文档，逐行对照学习" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<script src="static/jquery/jquery-1.9.1.min.js" th:src="@{/template/52en/static/jquery/jquery-1.9.1.min.js}" type="text/javascript"></script>
+<script src="static/js/masonry.min.js" th:src="@{/template/52en/static/js/masonry.min.js}"></script>
+<script src="static/js/imagesloaded.min.js" th:src="@{/template/52en/static/js/imagesloaded.min.js}"></script>
+<style type="text/css">
+*{padding:0;margin:0;list-style:none;}
+a {
+color:#333;
+text-decoration:none;
+outline:none;
+}
+img {
+	border: none;
+}
+.grid-item {
+	width: 200px;
+	padding: 10px;
+	background: #eee;
+	margin: 5px;
+}
+.grid-item img {
+	width: 200px;
+}
+.grid-item p {
+	padding: 5px 0px;
+	font-size: 14px;
+	color: #333;
+	white-space: normal;
+	width: 200px;
+	font-family: '微软雅黑';
+}
+.red {
+	font-color: 'red';
+}
+body{background:#FFF}
+</style>
+<script type="text/javascript">
+$(document).ready(function() {
+	 var $container = $('#masonry');
+	    $container.imagesLoaded(function() {
+	        $container.masonry({
+	                itemSelector: '.grid-item',
+	                gutter: 6,
+	                isAnimated: true,
+	            });
+	    });
+});
+</script>
+</head>
+<body>
+	<div id="masonry" class="grid">
+			<div class="grid-item">	
+				<p>公众号：ijk英语</p>
+				<!--<p>微信号：jiangxiaobei1965</p>
+				<p>qq 3550672899</p>-->
+				<p>看自己喜欢的影视剧</p>
+				<p>背诵记忆效率提高百倍</p>
+				<p>中英文对照</p>
+				<p>单词笔记</p>
+			</div>
+			<div class="grid-item"  th:each="data : ${#dataUtils.findLimt(3,20)}">
+				<p style="font-size: 20px;" >
+					<span th:text="${data.c1}">是大臣;是首相</span>
+				</p>
+				<p>
+					<span th:each="data : ${#dataUtils.findLimt(data.c3,5)}">
+						<a href="item.html" target="_blank" style="color: red;" th:href="@{'/front/52en/item/'+${data.subjectId}+'/'+${data.id}+'.html'}" th:text="${data.c1}">老友记S01E01</a>
+					</span>
+				</p>
+				<img src="static/image/banner/yes.jpg" th:src="${data.c6}"/>
+				<p th:text="${data.c7}">豆瓣9.7分！第一部3季*6+圣诞特别版，第二部2季*8，剧老句不老，经验告诉我们政治问题揭开总有个内幕,内幕揭开还有个黑幕</p>
+				<p><a href="http://52en.me/doc/YesPrimeMinisterS01.zip" th:href="${data.c5}" style="color: red;"  th:text="${data.c8}">第一季</a></p>
+			</div>
+	</div>
+	<div style="margin-bottom: 5px;">
+		<div>版权所有@公众号:ijk英语 2014-2018</div>
+		<div><a href="http://www.miitbeian.gov.cn" target="_ablank">鲁ICP备14014907号-4</a></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,3 @@
+elfinder文件管理，用于素材，文件的上传管理
+elfinder.legacy.html文件中的url 配置成自己的项目名称
+如 url : '/easycms/cms/connector'

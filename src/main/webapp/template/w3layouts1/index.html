@@ -1,0 +1,158 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>ijk英语</title>
+<meta name="baidu-site-verification" content="LlIlr7oZf7" />
+<meta name="keywords" content="ijk英语 台词 字幕  word 剧本" />
+<meta name="description" content="最热英美剧，字幕剧本台词word文档，逐行对照学习" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<link href="css/bootstrap.css" th:href="@{/template/w3layouts1/css/bootstrap.css}" rel="stylesheet" type="text/css" media="all" />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js" th:src="@{/template/w3layouts1/js/jquery.min.js}"></script>
+<!-- Custom Theme files -->
+<!--theme-style-->
+<link href="css/style.css" th:href="@{/template/w3layouts1/css/style.css}" rel="stylesheet" type="text/css" media="all" />	
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+</head>
+<body> 
+<!--header-->
+	<div class="header">
+			<div class="container">
+			<div class="header-top">
+				<div class="logo">
+					<a href="index.html"><img src="images/logo.png" th:src="@{/template/w3layouts1/images/logo.png}" alt="" /></a>
+				</div>
+				<div class="search">
+					<form>
+						<input type="text" value="Enter your search..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
+						<input type="submit"  value="">
+					</form>
+				</div>
+			<div class="clearfix"> </div>
+		</div>
+				<div class="top-nav">
+				<span class="menu"> </span>
+					<ul>
+						<li class="active"><a href="index.html" th:href="@{/front/n52en/index.html}"> HOME </a></li>
+					</ul>
+					<script>
+						$("span.menu").click(function(){
+							$(".top-nav ul").slideToggle(500, function(){
+							});
+						});
+					</script>
+				</div>			
+			</div>
+		</div>
+	<!--banner-->
+		<div class="banner">
+			<div class="container">
+			<div class="banner-grid">
+				<div class="col-md-4 grid-banner" th:each="data : ${#dataUtils.findLimt(149,3)}">
+					<a href="#" th:href="${data.c6}" target="_blank">
+						<img class="img-responsive" src="images/si.jpg" th:src="@{/upload/tmp/a/{src}(src=${data.c5})}" alt="" />
+						<div class="simple">
+							<span class="plus"> </span>
+						</div>
+					</a>
+				</div>
+			<div class="clearfix"> </div>
+			</div>
+			</div>
+			<div class="banner-grids">
+			<div class="container">
+				<div class="col-md-7 grid-banner-in"  th:each="data : ${#dataUtils.findLimt(150,1)}">
+					<img class="img-responsive" src="images/si3.jpg" th:src="@{/upload/tmp/a/{src}(src=${data.c5})}" alt="" />
+				</div>
+				<div class="col-md-5 grid-banner-in grid-banner-on">
+					<div class="res-in" th:each="data : ${#dataUtils.findLimt(151,2)}">
+						<img class="img-responsive" src="images/si4.jpg" th:src="@{/upload/tmp/a/{src}(src=${data.c5})}"  alt="" />
+					</div>
+				</div>	
+			<div class="clearfix"> </div>
+			</div>
+			<!---->
+			<div class="banner-bottom">	
+			  <div class="wmuSlider example1">
+				   <div class="wmuSliderWrapper">
+					 <article style="position: absolute; width: 100%; opacity: 0;" th:each="data : ${#dataUtils.findLimt(154,3)}"> 
+					 	<div class="container">
+						   	<div class="banner-wrap">			
+								 <h1 th:text="${data.c1}">Top iPhone Apps</h1>
+								 <p th:text="${data.c9}">Lorem ipsum dolor sit amet, ne utinam discere blandit vim, at iusto facilisis mel. Cetero audire sea an, has ex quem prima omnium.</p>
+								 <a href="#" th:href="${data.c5}" class=" more"><span class="plus-on"> </span>MORE</a>
+						   	 </div>
+						</div>
+					 </article>
+				</div>
+			</div>
+	
+			  <script src="js/jquery.wmuSlider.js" th:src="@{/template/w3layouts1/js/jquery.wmuSlider.js}"></script> 
+			  <script>
+	      			$('.example1').wmuSlider({
+					 pagination : false,
+				});         
+	  		  </script> 	
+			</div>
+		</div>
+		<!---->
+		<!-- <div class="container">
+			<div class="banner-grid">
+				<div class="col-md-4 grid-banner" th:each="data : ${#dataUtils.findLimt(152,3)}">
+					<a href="#" >
+					<img class="img-responsive" src="images/si8.jpg" th:src="@{/upload/tmp/a/{src}(src=${data.c5})}" alt="" />
+					<div class="simple simple-sit">
+						<span class="plus"> </span>
+					</div></a>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div> -->
+	
+		</div>   
+	</div>
+	<!---->
+	<div class="content">
+	<div class="container">
+		<div class="portfolio-grid">
+			<div id="portfoliolist">
+				<div class="port-grid" th:each="map : ${dataMap}">
+					<div class="portfolio  mix_all"  style="display: inline-block; opacity: 1;" th:each="data : ${map.value}">
+						<div class="portfolio-wrapper ">		
+							<a href="javascript:;" class="b-link-stripe b-animate-go  thickbox play-icon">
+						    <img class="img-responsive" src="images/po.jpg" th:src="${data.c6}" alt=""  />
+						    </div></a>
+							<div class="simple-out">
+								<h4 th:text="${data.c1}">Sticker Mule</h4>
+								<span th:each="data : ${#dataUtils.findLimt(data.c3,5)}">
+									<a href="single.html" th:href="@{'/front/n52en/item/'+${data.subjectId}+'/'+${data.id}+'.html'}" th:text="${data.c1}" target="_ablank">S01</a>  
+								</span>
+								<p th:text="${data.c7}">Lorem ipsum </p>
+								<a href="#" th:href="${data.c5}" class="read-more" ><span></span><font th:text="${data.c8}">下载</font></a>
+							</div>
+						</div>
+					</div>
+				</div>	
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+		
+	</div>
+	</div>
+	<!--footer-->
+	<div class="footer">
+		<div class="container">
+		<div class="footer-top">
+			<ul class="social-ic-icons">
+				<li><a href="http://www.miitbeian.gov.cn" target="_ablank">鲁ICP备14014907号-4</a></li>
+			</ul> 
+			<p class="footer-grid">Copyright &copy; 2018 ijk英语 Template by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+			<div class="clearfix"> </div>
+		</div>
+		 </div>
+	 </div>
+</body>
+</html>

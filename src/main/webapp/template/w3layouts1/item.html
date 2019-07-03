@@ -1,0 +1,88 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>ijk英语</title>
+<meta name="baidu-site-verification" content="LlIlr7oZf7" />
+<meta name="keywords" content="ijk英语 台词 字幕  word 剧本 " th:content="${subject.name + ' 台词 剧本  word 字幕' + data.c1}"/>
+<meta name="description" content="最热英美剧，字幕剧本台词word文档，逐行对照学习" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+<link href="css/bootstrap.css" th:href="@{/template/w3layouts1/css/bootstrap.css}" rel="stylesheet" type="text/css" media="all" />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js" th:src="@{/template/w3layouts1/js/jquery.min.js}"></script>
+<!-- Custom Theme files -->
+<!--theme-style-->
+<link href="css/style.css" th:href="@{/template/w3layouts1/css/style.css}" rel="stylesheet" type="text/css" media="all" />	
+<!--//theme-style-->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+</head>
+<body> 
+<!--header-->
+	<div class="header">
+		<div class="container">
+			<div class="header-top">
+				<div class="logo">
+					<a href="index.html"><img src="images/logo.png" th:src="@{/template/w3layouts1/images/logo.png}" alt="" /></a>
+				</div>
+				<div class="search">
+					<form>
+						<input type="text" value="Enter your search..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
+						<input type="submit"  value="">
+					</form>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<div class="top-nav">
+			<span class="menu"> </span>
+				<ul>
+					<li ><a href="index.html" th:href="@{/front/n52en/index.html}"> HOME </a></li>
+					<li class="active"><a href="javascript:;" > BLOG</a></li>						
+				</ul>
+				<script>
+						$("span.menu").click(function(){
+							$(".top-nav ul").slideToggle(500, function(){
+							});
+						});
+					</script>
+			</div>
+		</div>
+	</div>
+	<!---->
+	<div class="content">
+		<div class="container">
+			<div class="single">
+				<div class="single-top">
+					<h2 th:text="${subject.name + data.c1}">Sticker Mule. Best Place For Your Sticker Needs!</h2>
+					<span th:if="${!#strings.isEmpty(data.c5)}">
+						MP3<audio src="someaudio.wav" controls preload th:src="${data.c5}">
+						您的浏览器不支持 audio 标签。
+						</audio>
+					</span>
+				</div>
+				<div class="single-middle">
+					<div class="col-md-6" th:utext="${data.c15}">
+						asdasd
+					</div>
+					<div class="col-md-6" th:utext="${data.c16}">
+					sdasd
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!---->
+	<!--footer-->
+	<div class="footer">
+		<div class="container">
+		<div class="footer-top">
+			<ul class="social-ic-icons">
+				<li><a href="http://www.miitbeian.gov.cn" target="_ablank">鲁ICP备14014907号-4</a></li>
+			</ul> 
+			<p class="footer-grid">Copyright &copy; 2018 ijk英语 Template by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+			<div class="clearfix"> </div>
+		</div>
+		 </div>
+	 </div>
+</body>
+</html>

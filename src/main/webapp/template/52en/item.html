@@ -1,0 +1,33 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="${data.c1}+'中英剧本台词'">ijk英语</title>
+<meta name="baidu-site-verification" content="LlIlr7oZf7" />
+<meta name="keywords" th:content="${data.c1}+'中英剧本台词'"  content="ijk英语" />
+<meta name="description" th:content="'52en'+${data.c1}+'中英剧本台词 '" content="52en 各种著名美剧字幕，逐行对照学习" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<style type="text/css">
+*{
+	margin: 0;
+	padding: 0;
+}
+</style>
+</head>
+<body>
+	<div>
+		<span th:text="${data.c1}"></span>
+		<span th:if="${!#strings.isEmpty(data.c5)}">
+			MP3<audio src="someaudio.wav" controls preload th:src="${data.c5}">
+			您的浏览器不支持 audio 标签。
+			</audio>
+		</span>
+	</div>
+	<div style="float: left;width: 50%;" th:utext="${data.c15}">
+		
+	</div>
+	<div style="margin-left: 50%;" th:utext="${data.c16}">
+	</div>
+</body>
+</html>

@@ -1,0 +1,278 @@
+button,input,select,textarea{  
+    vertical-align:middle;  
+}
+/* input[type="button"], button {  
+        width: 200px; 
+        padding:6px;   
+        background-color: #428bca;  
+        border-color: #357ebd;  
+        color: #fff;  
+        -moz-border-radius: 10px;  
+        -webkit-border-radius: 10px;  
+        border-radius: 10px; future proofing  
+        -khtml-border-radius: 10px; for old Konqueror browsers  
+        text-align: center;  
+        vertical-align: middle;  
+        border: 1px solid transparent;  
+        font-weight: 900;  
+        font-size:125%  
+      }  */
+textarea{  
+    resize:none;  
+    vertical-align:top;  
+    overflow:auto;  
+    font:14px/1.5 Helvetica,Arial;  
+    width:500px;  
+    height:80px;  
+}  
+.form-text{  
+    margin:0;  
+    font:14px/1.5 Helvetica,Arial;  
+    height:18px;  
+    width:200px;  
+}  
+.form-text, textarea, select{  
+    border: 1px solid #CCCCCC;  
+    border-radius: 3px 3px 3px 3px;  
+    padding:4px;  
+}  
+.form-text, textarea {  
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;  
+  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;  
+  -ms-transition: border linear 0.2s, box-shadow linear 0.2s;  
+  -o-transition: border linear 0.2s, box-shadow linear 0.2s;  
+  transition: border linear 0.2s, box-shadow linear 0.2s;  
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);  
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);  
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);  
+}  
+.form-text:focus, textarea:focus,select{  
+    outline: 0 none;  
+}  
+.form-text:focus, textarea:focus {  
+  border-color: rgba(82, 168, 236, 0.8);  
+  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);  
+  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);  
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);  
+}  
+.form-radio,.form-checkbox{  
+    margin:0;  
+    padding:0;  
+    width:13px;  
+    height:13px;  
+    font-size:13px;  
+    font-family:tahoma,Helvetica, Arial;  
+}  
+.inline-ele{  
+    margin-right:5px;  
+}  
+/* form-item */  
+.form-item{  
+    margin-bottom:9px;  
+}  
+.form-item label{  
+    font-size:14px;  
+    line-height:28px;  
+}  
+/* horizontal form label */  
+.form-horizontal label{  
+    float: left;  
+    text-align: right;  
+    width:100px;  
+}  
+.form-horizontal .form-field{  
+    float:left;  
+}  
+.form-horizontal .form-action,  
+.form-horizontal .item-no-label{  
+    padding-left:100px;/*label width*/  
+}  
+/* vertical form label */  
+.form-vertical label{  
+    display:block;  
+    float:none;  
+    width:auto;  
+    text-align:left;  
+}  
+.form-vertical .form-field{  
+    float:none;  
+}  
+.form-vertical .form-action,  
+.form-vertical .item-no-label{  
+    padding-left:0;  
+}  
+/* field-list */  
+.form-radio-checkbox-wrap .form-field{  
+    margin-top:5px;  
+}  
+.form-radio-checkbox-wrap .form-field label{  
+    text-align: left;  
+    width: auto;  
+    font-weight:normal;  
+    margin:0 10px 0 0;  
+    float:left;  
+    display:inline;  
+    line-height:18px;  
+    font-size:14px;  
+}  
+.form-radio-checkbox-wrap .form-field .field-list-block{  
+    display:block;  
+    float: none;  
+    margin-right:0;  
+    overflow:auto;*zoom:1;  
+}  
+.form-radio-checkbox-wrap .form-radio,  
+.form-radio-checkbox-wrap .form-checkbox,  
+.form-radio-checkbox-wrap span{  
+    float:left;  
+    display:inline;  
+}  
+.form-radio-checkbox-wrap .form-radio,  
+.form-radio-checkbox-wrap .form-checkbox{  
+    margin-right:5px;  
+    margin-top:2px;  
+}  
+/* select */  
+.form-item select{  
+    *margin-top:5px;  
+    *vertical-align:top;  
+}  
+/* form-action */  
+.form-action{  
+    clear:both;  
+}  
+.lightgreybtn{  
+    border:1px solid #ccc;  
+    color:#666;  
+    box-shadow:inset 0 1px 1px #fff,0 0 1px #fff inset;  
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNmU2ZTYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);  
+    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(230,230,230,1) 100%); /* FF3.6+ */  
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(230,230,230,1))); /* Chrome,Safari4+ */  
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(230,230,230,1) 100%); /* Chrome10+,Safari5.1+ */  
+    background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(230,230,230,1) 100%); /* Opera 11.10+ */  
+    background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(230,230,230,1) 100%); /* IE10+ */  
+    background: linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(230,230,230,1) 100%); /* W3C */  
+}  
+.lightgreybtn:hover{  
+    background:#e6e6e6;  
+    color:#666;  
+}  
+.no-css3 .lightgreybtn{  
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6e6e6',GradientType=0 ); /* IE6-8 */  
+}  
+.no-css3 .lightgreybtn:hover{  
+    filter:none;  
+}  
+.inputbtn{  
+    display:inline-block;*display:inline;*zoom:1;  
+    cursor: pointer;  
+    text-align:center;  
+    overflow:visible;  
+    /* size */  
+    padding:0 16px;  
+    height:28px;  
+    font-size:14px;  
+    -moz-border-radius:5px;  
+    -webkit-border-radius:5px;  
+    border-radius:5px;  
+}  
+:root .inputbtn{  
+    padding-top:3px\9;  
+}  
+@-moz-document url-prefix(){  
+    .inputbtn{  
+        padding-bottom:3px;  
+    }  
+}  
+/* description */  
+.form-des{  
+    color: #999;  
+    font-size:14px;  
+    margin-left:5px;  
+}  
+p.form-des{  
+    margin:0;  
+}  
+/* codePic */  
+.code-pic{  
+    display:inline-block;*display:inline;*zoom:1;  
+}  
+.code-pic img{  
+    height:28px;  
+    vertical-align:middle;  
+    margin:0 5px;  
+}  
+/* tips messages */  
+.form-error, .form-alert, .form-notice, .form-success, .form-info {  
+    border: 2px solid #DDDDDD;  
+    margin-bottom: 9px;  
+    padding:8px;  
+    font-size:14px;  
+    border-radius:3px;  
+}  
+/* span inline tips */  
+span.form-error, span.form-alert, span.form-notice, span.form-success, span.form-info {  
+    border-width:1px;  
+    display:inline-block;*display:inline;*zoom:1;  
+    line-height:26px;  
+    vertical-align:middle;  
+    padding:0 5px;  
+    font-size:14px;  
+    margin:0 0 0 5px;  
+}  
+.form-error, .form-alert {  
+    background: none repeat scroll 0 0 #FBE3E4;  
+    border-color: #FBC2C4;  
+    color: #8A1F11;  
+}  
+.form-notice {  
+    background: none repeat scroll 0 0 #FFF6BF;  
+    border-color: #FFD324;  
+    color: #514721;  
+}  
+.form-info {  
+    background: none repeat scroll 0 0 #D5EDF8;  
+    border-color: #92CAE4;  
+    color: #205791;  
+}  
+.form-success {  
+    background: none repeat scroll 0 0 #E6EFC2;  
+    border-color: #C6D880;  
+    color: #264409;  
+}  
+.form-error a, .form-alert a,.form-notice a,.form-info a,.form-success a{  
+    text-decoration:underline;  
+}  
+.form-error a, .form-alert a {  
+    color: #8A1F11;   
+}  
+.form-notice a {  
+    color: #514721;  
+}  
+.form-info a {  
+    color: #205791;  
+}  
+.form-success a {  
+    color: #264409;  
+}  
+/* clear form-item float */  
+.form-item:before, .form-item:after {  
+    content:"";  
+    display:table;  
+}  
+.form-item:after{  
+    clear:both;  
+    overflow:hidden;  
+}  
+.form-item{  
+    zoom:1;  
+}  
+.help-inline {
+  display: inline-block;
+  *display: inline;
+  padding-left: 5px;
+  vertical-align: middle;
+  *zoom: 1;
+  color: #595959;
+  font-size:14px; 
+}
