@@ -1,16 +1,18 @@
- 1. Java easycms  持续开发中。。。别忘了给star一下
- 2. 开发环境：maven， eclipse neon，jdk8(编译1.7)，tomcat，mysql5.6
- 3. Java EasyCms： 使用最简单性能最高的框架，将cms系统简单到极致，灵活的栏目扩展，快速的构建普通网站
-    生成的静态演示站（测试）： www.j4cms.com
-    由树莓派和花生棒在家里部署项目：http://180206xr75.51mypc.cn/index.html
- 4. 静态网站：生成工具teleport ultra 请求本地启动的项目即可，拷贝出来就能显示，报错就覆盖一下assets文件夹
- 5. 纯html：生成后就可以部署到最便宜的php空间上了，备案、域名、空间推荐阿里云，领券： https://promotion.aliyun.com/ntms/act/ambassador/sharetouser.html?userCode=jolyjv1d&productCode=qingcloud&utm_source=jolyjv1d
- 6. 术框架工具：java，servlet，guice4， mybatis3， jstl，bootstrap2，bootstrap3，jerichotab，jqGrid，jquery，jquery-validation，layer，My97DatePicker，ueditor，zTree等等
- 7. 登录：localhost:8080/easycms/cms  账户root 密码easycms在shiro.ini 文件中配置前端 localhost:8080/easycms/index,演示模板为商城
- 8. 注意：使用ueditor时要使用根目录，否则上传的图片不显示，即打包成 ROOT.war放到tomcat 的webapps下面
- 9. 几张截图
-![输入图片说明](https://git.oschina.net/uploads/images/2017/0812/113713_60f5d724_370580.png "QQ图片20170812111809.png")
-![输入图片说明](https://git.oschina.net/uploads/images/2017/0812/113721_66620f65_370580.png "QQ图片20170812113229.png")
-![输入图片说明](https://git.oschina.net/uploads/images/2017/0812/113730_fc5ca86f_370580.png "QQ图片20170729165140.png")
-![输入图片说明](https://git.oschina.net/uploads/images/2017/0812/113738_6364e2b1_370580.png "QQ图片20170812073235.png")
-![输入图片说明](https://git.oschina.net/uploads/images/2017/0812/113745_752d6023_370580.png "QQ图片20170812073303.png")
+ - 2.1
+ - A：maven环境配置好
+ - B：导入mysql数据库脚本，数据库名称为：easycms，用户名、密码可以在sqlMapConfig.xml修改
+ - C：使用tomcat部署、启动、运行
+ - D：前端预览：1: http://localhost:8080/easycms/front/n52en，2: http://localhost:8080/easycms/front/52en，3: http://localhost:8080/easycms/front/cafe
+ - 后端管理：http://localhost:8080/login.jsp，登录后会自动打开文件管理页面
+ - 开发环境：win10，maven3.3.9， eclipse neon，jdk8，tomcat7
+ - 框架工具：
+ - *后端：java，servlet3，guice4， mybatis3， jstl，thymeleaf
+ - *前端：jqGrid，jquery，jquery-validation，layer，My97DatePicker，ueditor，zTree
+
+ - *几张截图
+ - 文件管理和栏目配置
+![文件管理和栏目配置](https://images.gitee.com/uploads/images/2019/0703/162528_7104bd5a_370580.png "QQ图片20190703162510.png")
+ - 52en.me 站点
+![52en.me 站点](https://images.gitee.com/uploads/images/2019/0703/162414_449b4ed8_370580.png "QQ图片20190703162358.png")
+ - cafe演示，未全部配置，仅中间菜单取数据库数据 
+![输入图片说明](https://images.gitee.com/uploads/images/2019/0703/162927_3f7ed403_370580.png "QQ图片20190703162908.png")
