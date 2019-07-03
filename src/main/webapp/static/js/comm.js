@@ -1,13 +1,17 @@
 
 var Share = {};
 Share.open = function(title,url, w, h) {
-	var index = parent.layer.open({
+	var index = layer.open({
   	  type: 2, 
   	  area: [w+'px', h+'px'],
   	  title: title,
   	  closeBtn: 1,
-  	  shadeClose: false,
-  	  shade: [0.5 , '#000' , true],
+  	  shade: 0,
+  	  moveOut: true,
+  	  maxmin: true,
+  	  //offset: ['20px', '210px'],
+  	  shade: [0.01 , '#000' , false],
+  	  //shadeClose: true,
   	  content: url
   	});
 	return index;

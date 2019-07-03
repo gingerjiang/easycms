@@ -1,6 +1,6 @@
 /*
-SQLyog Ultimate v11.11 (64 bit)
-MySQL - 5.6.24-log : Database - easycms
+SQLyog Ultimate v11.24 (32 bit)
+MySQL - 5.6.36-log : Database - easycms
 *********************************************************************
 */
 
@@ -15,12 +15,12 @@ MySQL - 5.6.24-log : Database - easycms
 
 CREATE TABLE `cfg` (
   `c` int(11) DEFAULT NULL,
-  `c1` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
-  `c2` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
-  `c3` varchar(100) CHARACTER SET utf8 DEFAULT NULL,
+  `c1` varchar(100) DEFAULT NULL,
+  `c2` varchar(100) DEFAULT NULL,
+  `c3` varchar(100) DEFAULT NULL,
   `seq` int(11) DEFAULT NULL,
   KEY `c` (`c`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `cfg` */
 
@@ -48,242 +48,13 @@ insert  into `cfg`(`c`,`c1`,`c2`,`c3`,`seq`) values (3,'date','日期',NULL,4);
 insert  into `cfg`(`c`,`c1`,`c2`,`c3`,`seq`) values (3,'editor','富文本',NULL,6);
 insert  into `cfg`(`c`,`c1`,`c2`,`c3`,`seq`) values (3,'combo','下拉列表',NULL,5);
 
-/*Table structure for table `column` */
-
-CREATE TABLE `column` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
-  `model_id` bigint(20) NOT NULL COMMENT '模型id',
-  `name` varchar(200) NOT NULL COMMENT '名称',
-  `type` varchar(10) NOT NULL COMMENT '类型',
-  `seq` int(11) DEFAULT '0' COMMENT '序号',
-  `remark` varchar(200) DEFAULT NULL COMMENT '备注',
-  `width` int(11) DEFAULT NULL COMMENT '列表显示时宽带',
-  `allow_blank` char(1) DEFAULT NULL COMMENT '允许为空',
-  `list_show` char(1) DEFAULT NULL COMMENT '列表显示',
-  `sql` varchar(500) DEFAULT NULL COMMENT '下拉对应sql',
-  `status` int(11) DEFAULT '0' COMMENT '状态',
-  `mapping_data` varchar(20) NOT NULL COMMENT '映射字段',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=263 DEFAULT CHARSET=utf8;
-
-/*Data for the table `column` */
-
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (1,1,'标题','text',1,'标题',200,'0','1',NULL,1,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (2,1,'内容','editor',5,'',200,'1','0',NULL,1,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (3,2,'标题','text',1,'标题',200,'0','1',NULL,1,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (4,2,'内容','editor',5,'',200,'1','0',NULL,1,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (5,3,'标题','text',1,'标题',200,'0','1',NULL,1,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (6,3,'内容','editor',5,'',200,'1','0',NULL,1,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (7,4,'标题','text',1,'标题',200,'0','1',NULL,1,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (8,4,'内容','editor',5,'',200,'1','0',NULL,1,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (9,5,'标题','text',1,'标题',200,'0','1',NULL,1,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (10,5,'内容','editor',5,'',200,'1','0',NULL,1,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (11,6,'标题','text',1,'标题',200,'0','1',NULL,1,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (12,6,'内容','editor',5,'',200,'1','0',NULL,1,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (13,7,'标题','text',1,'标题',200,'0','1',NULL,1,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (14,7,'内容','editor',5,'',200,'1','0',NULL,1,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (15,8,'标题','text',1,'标题',200,'0','1',NULL,1,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (16,8,'内容','editor',5,'',200,'1','0',NULL,1,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (17,9,'标题','text',1,'标题',200,'0','1',NULL,1,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (18,9,'内容','editor',5,'',200,'1','0',NULL,1,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (19,10,'标题','text',1,'标题',200,'0','1',NULL,1,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (20,10,'内容','editor',5,'',200,'1','0',NULL,1,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (21,11,'标题','text',1,'标题',200,'0','1',NULL,1,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (22,11,'内容','editor',5,'',200,'1','0',NULL,1,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (23,12,'标题','text',1,'标题',200,'0','1',NULL,1,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (24,12,'内容','editor',5,'',200,'1','0',NULL,1,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (25,13,'名称','text',1,'',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (26,13,'详情','editor',9,'',200,'1','0',NULL,0,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (67,34,'名称','text',1,'标题',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (69,35,'名称','text',1,'标题',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (70,35,'品牌','text',2,'',100,'1','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (71,34,'图片','text',2,'',100,'0','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (72,34,'简介1','text',3,'',100,'1','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (73,34,'简介2','text',4,'',100,'1','1',NULL,0,'c6');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (74,34,'简介3','text',5,'',100,'1','1',NULL,0,'c7');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (75,34,'链接','text',6,'',100,'0','0',NULL,0,'c9');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (76,34,'价格','text',7,'',100,'0','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (77,35,'价格','text',3,'',50,'0','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (78,35,'css','text',4,'',80,'0','1',NULL,0,'c4');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (79,35,'链接','text',5,'',100,'1','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (80,44,'名称','text',1,'标题',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (81,44,'介绍1','text',2,'',200,'1','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (82,37,'名称','text',1,'标题',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (83,37,'规格','text',2,'',100,'1','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (84,38,'名称','text',1,'',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (88,40,'标题','text',1,'标题',200,'0','1',NULL,1,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (89,40,'内容','editor',5,'',200,'1','0',NULL,1,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (96,44,'介绍2','text',3,'',100,'1','1',NULL,0,'c6');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (97,44,'现价','text',3,'',100,'1','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (98,44,'原价','text',5,'',60,'1','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (99,44,'库存','text',6,'',100,'1','1',NULL,0,'c4');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (100,44,'图片','text',7,'',100,'1','0',NULL,0,'c7');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (101,37,'价格','text',3,'',60,'0','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (102,37,'图片','text',4,'',100,'0','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (103,37,'链接','text',5,'',100,'1','1',NULL,0,'c6');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (104,38,'链接','text',5,'',100,'1','1',NULL,0,'c6');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (105,38,'规格','text',2,'',100,'1','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (106,38,'价格','text',3,'',60,'0','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (107,38,'图片','text',4,'',100,'0','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (109,39,'规格','text',2,'',100,'1','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (110,39,'价格','text',3,'',60,'0','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (111,39,'图片','text',4,'',100,'0','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (112,39,'链接','text',5,'',100,'1','1',NULL,0,'c6');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (113,39,'名称','text',1,'标题',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (114,44,'标题','text',1,'标题',200,'0','1',NULL,1,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (115,44,'内容','editor',5,'',200,'1','0',NULL,1,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (116,45,'名称','text',1,'标题',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (120,45,'图片','text',5,'',100,'0','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (121,45,'链接','text',6,'',100,'1','1',NULL,0,'c6');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (122,41,'名称','text',1,'标题',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (123,41,'规格','text',2,'',100,'1','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (124,41,'价格','text',3,'',60,'0','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (125,41,'图片','text',4,'',100,'0','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (126,41,'链接','text',5,'',100,'1','1',NULL,0,'c6');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (127,42,'名称','text',1,'标题',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (128,42,'规格','text',2,'',100,'1','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (129,42,'价格','text',3,'',60,'0','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (130,42,'图片','text',4,'',100,'0','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (131,42,'链接','text',5,'',100,'1','1',NULL,0,'c6');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (132,43,'名称','text',1,'标题',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (133,43,'规格','text',2,'',100,'1','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (134,43,'价格','text',3,'',60,'0','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (135,43,'图片','text',4,'',100,'0','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (136,43,'链接','text',5,'',100,'1','1',NULL,0,'c6');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (137,13,'品牌','text',2,'',100,'0','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (138,13,'简介','text',5,'',100,'1','0',NULL,0,'c9');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (139,13,'价格','text',3,'',60,'0','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (140,13,'图片','text',4,'',100,'0','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (141,14,'品牌','text',2,'',100,'0','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (142,14,'简介','text',5,'',100,'1','0',NULL,0,'c9');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (143,14,'价格','text',3,'',60,'0','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (144,14,'图片','text',4,'',100,'0','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (145,14,'名称','text',1,'',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (146,14,'详情','editor',9,'',200,'1','0',NULL,0,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (147,15,'品牌','text',2,'',100,'0','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (148,15,'简介','text',5,'',100,'1','0',NULL,0,'c9');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (149,15,'价格','text',3,'',60,'0','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (150,15,'图片','text',4,'',100,'0','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (151,15,'名称','text',1,'',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (152,15,'详情','editor',9,'',200,'1','0',NULL,0,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (153,16,'品牌','text',2,'',100,'0','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (154,16,'简介','text',5,'',100,'1','0',NULL,0,'c9');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (155,16,'价格','text',3,'',60,'0','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (156,16,'规格','text',4,'',100,'0','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (157,16,'名称','text',1,'',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (158,16,'详情','editor',9,'',200,'1','0',NULL,0,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (159,17,'品牌','text',2,'',100,'0','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (160,17,'简介','text',5,'',100,'1','0',NULL,0,'c9');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (161,17,'价格','text',3,'',60,'0','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (162,17,'规格','text',4,'',100,'0','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (163,17,'名称','text',1,'',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (164,17,'详情','editor',9,'',200,'1','0',NULL,0,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (165,18,'品牌','text',2,'',100,'0','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (166,18,'简介','text',5,'',100,'1','0',NULL,0,'c9');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (167,18,'价格','text',3,'',60,'0','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (168,18,'规格','text',4,'',100,'0','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (169,18,'名称','text',1,'',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (170,18,'详情','editor',9,'',200,'1','0',NULL,0,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (171,19,'品牌','text',2,'',100,'0','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (172,19,'简介','text',5,'',100,'1','0',NULL,0,'c9');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (173,19,'价格','text',3,'',60,'0','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (174,19,'规格','text',4,'',100,'0','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (175,19,'名称','text',1,'',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (176,19,'详情','editor',9,'',200,'1','0',NULL,0,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (177,20,'品牌','text',2,'',100,'0','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (178,20,'简介','text',5,'',100,'1','0',NULL,0,'c9');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (179,20,'价格','text',3,'',60,'0','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (180,20,'规格','text',4,'',100,'0','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (181,20,'名称','text',1,'',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (182,20,'详情','editor',9,'',200,'1','0',NULL,0,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (183,21,'品牌','text',2,'',100,'0','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (184,21,'简介','text',5,'',100,'1','0',NULL,0,'c9');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (185,21,'价格','text',3,'',60,'0','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (186,21,'规格','text',4,'',100,'0','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (187,21,'名称','text',1,'',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (188,21,'详情','editor',9,'',200,'1','0',NULL,0,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (189,22,'品牌','text',2,'',100,'0','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (190,22,'简介','text',5,'',100,'1','0',NULL,0,'c9');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (191,22,'价格','text',3,'',60,'0','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (192,22,'规格','text',4,'',100,'0','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (193,22,'名称','text',1,'',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (194,22,'详情','editor',9,'',200,'1','0',NULL,0,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (195,23,'品牌','text',2,'',100,'0','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (196,23,'简介','text',5,'',100,'1','0',NULL,0,'c9');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (197,23,'价格','text',3,'',60,'0','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (198,23,'规格','text',4,'',100,'0','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (199,23,'名称','text',1,'',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (200,23,'详情','editor',9,'',200,'1','0',NULL,0,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (201,24,'品牌','text',2,'',100,'0','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (202,24,'简介','text',5,'',100,'1','0',NULL,0,'c9');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (203,24,'价格','text',3,'',60,'0','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (204,24,'规格','text',4,'',100,'0','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (205,24,'名称','text',1,'',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (206,24,'详情','editor',9,'',200,'1','0',NULL,0,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (207,25,'品牌','text',2,'',100,'0','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (208,25,'简介','text',5,'',100,'1','0',NULL,0,'c9');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (209,25,'价格','text',3,'',60,'0','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (210,25,'规格','text',4,'',100,'0','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (211,25,'名称','text',1,'',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (212,25,'详情','editor',9,'',200,'1','0',NULL,0,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (213,26,'品牌','text',2,'',100,'0','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (214,26,'简介','text',5,'',100,'1','0',NULL,0,'c9');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (215,26,'价格','text',3,'',60,'0','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (216,26,'规格','text',4,'',100,'0','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (217,26,'名称','text',1,'',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (218,26,'详情','editor',9,'',200,'1','0',NULL,0,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (219,27,'品牌','text',2,'',100,'0','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (220,27,'简介','text',5,'',100,'1','0',NULL,0,'c9');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (221,27,'价格','text',3,'',60,'0','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (222,27,'规格','text',4,'',100,'0','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (223,27,'名称','text',1,'',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (224,27,'详情','editor',9,'',200,'1','0',NULL,0,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (225,28,'品牌','text',2,'',100,'0','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (226,28,'简介','text',5,'',100,'1','0',NULL,0,'c9');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (227,28,'价格','text',3,'',60,'0','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (228,28,'规格','text',4,'',100,'0','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (229,28,'名称','text',1,'',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (230,28,'详情','editor',9,'',200,'1','0',NULL,0,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (231,29,'品牌','text',2,'',100,'0','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (232,29,'简介','text',5,'',100,'1','0',NULL,0,'c9');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (233,29,'价格','text',3,'',60,'0','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (234,29,'规格','text',4,'',100,'0','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (235,29,'名称','text',1,'',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (236,29,'详情','editor',9,'',200,'1','0',NULL,0,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (237,30,'品牌','text',2,'',100,'0','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (238,30,'简介','text',5,'',100,'1','0',NULL,0,'c9');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (239,30,'价格','text',3,'',60,'0','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (240,30,'规格','text',4,'',100,'0','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (241,30,'名称','text',1,'',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (242,30,'详情','editor',9,'',200,'1','0',NULL,0,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (243,31,'品牌','text',2,'',100,'0','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (244,31,'简介','text',5,'',100,'1','0',NULL,0,'c9');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (245,31,'价格','text',3,'',60,'0','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (246,31,'规格','text',4,'',100,'0','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (247,31,'名称','text',1,'',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (248,31,'详情','editor',9,'',200,'1','0',NULL,0,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (249,32,'品牌','text',2,'',100,'0','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (250,32,'简介','text',5,'',100,'1','0',NULL,0,'c9');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (251,32,'价格','text',3,'',60,'0','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (252,32,'规格','text',4,'',100,'0','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (253,32,'名称','text',1,'',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (254,32,'详情','editor',9,'',200,'1','0',NULL,0,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (255,33,'品牌','text',2,'',100,'0','1',NULL,0,'c2');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (256,33,'简介','text',5,'',100,'1','0',NULL,0,'c9');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (257,33,'价格','text',3,'',60,'0','1',NULL,0,'c3');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (258,33,'规格','text',4,'',100,'0','1',NULL,0,'c5');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (259,33,'名称','text',1,'',200,'0','1',NULL,0,'c1');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (260,33,'详情','editor',9,'',200,'1','0',NULL,0,'c15');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (261,15,'淘宝链接','text',6,'',100,'0','0',NULL,0,'c6');
-insert  into `column`(`id`,`model_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (262,13,'测试sql','combo',6,'',100,'0','1','select   type,   value from combo where type = 1',0,'c4');
-
 /*Table structure for table `combo` */
 
 CREATE TABLE `combo` (
   `type` int(11) NOT NULL COMMENT '类型',
   `value` varchar(20) NOT NULL COMMENT '值',
   `num` int(11) DEFAULT NULL COMMENT '序号'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `combo` */
 
@@ -292,45 +63,6 @@ insert  into `combo`(`type`,`value`,`num`) values (1,'花生棒',1);
 insert  into `combo`(`type`,`value`,`num`) values (2,'手机',1);
 insert  into `combo`(`type`,`value`,`num`) values (2,'电脑',2);
 insert  into `combo`(`type`,`value`,`num`) values (1,'花生壳',3);
-
-/*Table structure for table `data_0` */
-
-CREATE TABLE `data_0` (
-  `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `c1` varchar(100) DEFAULT NULL,
-  `c2` varchar(100) DEFAULT NULL,
-  `c3` varchar(100) DEFAULT NULL,
-  `c4` varchar(100) DEFAULT NULL,
-  `c5` varchar(200) DEFAULT NULL,
-  `c6` varchar(200) DEFAULT NULL,
-  `c7` varchar(200) DEFAULT NULL,
-  `c8` varchar(200) DEFAULT NULL,
-  `c9` varchar(500) DEFAULT NULL,
-  `c10` varchar(500) DEFAULT NULL,
-  `c11` varchar(500) DEFAULT NULL,
-  `c12` varchar(500) DEFAULT NULL,
-  `c13` text,
-  `c14` text,
-  `c15` longtext,
-  `c16` longtext,
-  `model_id` varchar(200) NOT NULL COMMENT '对应模型id',
-  `state` int(11) DEFAULT NULL COMMENT '状态，1已发布，0未发布',
-  `create_time` datetime DEFAULT NULL COMMENT '创建时间',
-  `create_by` varchar(20) DEFAULT NULL COMMENT '创建人，账号',
-  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
-  `update_by` varchar(20) DEFAULT NULL COMMENT '更新人',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
-
-/*Data for the table `data_0` */
-
-insert  into `data_0`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (1,'中英字幕word文档','assets/images/home-header6.jpg','10',NULL,'看电影学英语','仅需 ¥10','兴趣驱动，记忆力提高百倍',NULL,'https://item.taobao.com/item.htm?id=555369708429',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'34',1,'2017-07-30 13:14:57','admin','2017-08-10 21:08:20','admin');
-insert  into `data_0`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (2,'花生棒Pro','assets/images/home-header5.jpg','128',NULL,'内网穿透','仅需 ¥128 送电源','你在任何地方都可以访问你家的程序',NULL,'https://item.taobao.com/item.htm?id=556854194022',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'34',1,'2017-07-30 13:16:05','admin','2017-08-10 20:56:11','admin');
-insert  into `data_0`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (3,'Raspberry Pi 3 Model B','assets/images/home-header4.jpg','199',NULL,'树莓派3 B','仅需 ¥199','内置Wi-Fi和蓝牙',NULL,'https://item.taobao.com/item.htm?id=556854194022',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'34',1,'2017-07-30 13:16:48','admin','2017-08-10 20:47:43','admin');
-insert  into `data_0`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (4,'Headphone','beat brand','150','banner-img banner-img3','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'35',1,'2017-07-30 14:25:42','admin',NULL,NULL);
-insert  into `data_0`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (5,'Smartwatch','sony brand','220','banner-img banner-img2','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'35',1,'2017-07-30 14:26:38','admin',NULL,NULL);
-insert  into `data_0`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (6,'Tablet mini 3','Samsung','700','banner-img','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'35',1,'2017-07-30 14:27:07','admin',NULL,NULL);
-insert  into `data_0`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (7,'Macbook, Laptop','290.00','390.00','充足','Apple Macbook Retina 23’’','Duis autem vel eum iriure dolor in hendrerit in vu','assets/images/wk-deal-img.jpg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'44',1,'2017-07-30 18:36:45','admin',NULL,NULL);
 
 /*Table structure for table `data_1` */
 
@@ -352,122 +84,157 @@ CREATE TABLE `data_1` (
   `c14` text,
   `c15` longtext,
   `c16` longtext,
-  `model_id` varchar(200) NOT NULL COMMENT '对应模型id',
+  `subject_id` bigint(20) NOT NULL COMMENT '对应模型id',
   `state` int(11) DEFAULT NULL COMMENT '状态，1已发布，0未发布',
   `create_time` datetime DEFAULT NULL COMMENT '创建时间',
   `create_by` varchar(20) DEFAULT NULL COMMENT '创建人，账号',
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `update_by` varchar(20) DEFAULT NULL COMMENT '更新人',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=269 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=395 DEFAULT CHARSET=utf8;
 
 /*Data for the table `data_1` */
 
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (213,'Macbook, Laptop','Apple Macbook Retina 23’','290.00',NULL,'assets/images/new-arrivals-img6.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'37',1,'2017-07-30 20:04:48','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (214,'Macbook, Laptop','Apple Macbook Retina 23’','290.00',NULL,'assets/images/new-arrivals-img6.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'37',1,'2017-07-30 20:05:16','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (215,'Macbook, Laptop','Apple Macbook Retina 23’','290.00',NULL,'assets/images/new-arrivals-img6.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'37',1,'2017-07-30 20:05:19','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (216,'Macbook, Laptop','Apple Macbook Retina 23’','290.00',NULL,'assets/images/new-arrivals-img6.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'37',1,'2017-07-30 20:05:21','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (217,'Macbook, Laptop','Apple Macbook Retina 23’','290.00',NULL,'assets/images/new-arrivals-img6.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'37',1,'2017-07-30 20:05:23','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (218,'Macbook, Laptop','Apple Macbook Retina 23’','290.00',NULL,'assets/images/new-arrivals-img6.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'37',1,'2017-07-30 20:05:24','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (219,'Macbook, Laptop','Apple Macbook Retina 23’','290.00',NULL,'assets/images/new-arrivals-img.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'38',1,'2017-07-30 20:07:07','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (220,'Macbook, Laptop','Apple Macbook Retina 23’','290.00',NULL,'assets/images/new-arrivals-img.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'38',1,'2017-07-30 20:07:19','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (221,'Macbook, Laptop','Apple Macbook Retina 23’','290.00',NULL,'assets/images/new-arrivals-img.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'38',1,'2017-07-30 20:07:21','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (222,'Macbook, Laptop','Apple Macbook Retina 23’','290.00',NULL,'assets/images/new-arrivals-img.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'38',1,'2017-07-30 20:07:23','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (223,'Macbook, Laptop','Apple Macbook Retina 23’','290.00',NULL,'assets/images/new-arrivals-img.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'38',1,'2017-07-30 20:07:25','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (224,'Macbook, Laptop','Apple Macbook Retina 23’','290.00',NULL,'assets/images/new-arrivals-img.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'38',1,'2017-07-30 20:07:27','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (225,'Macbook, Laptop','Apple Macbook Retina 23’','290.00',NULL,'assets/images/new-arrivals-img.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'38',1,'2017-07-30 20:07:31','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (226,'Macbook, Laptop','Apple Macbook Retina 23’','290.00',NULL,'assets/images/new-arrivals-img.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'38',1,'2017-07-30 20:07:33','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (227,'Macbook, Laptop','Apple Macbook Retina 23’','290.00',NULL,'assets/images/new-arrivals-img3.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'39',1,'2017-07-30 20:08:23','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (228,'Macbook, Laptop','Apple Macbook Retina 23’','290.00',NULL,'assets/images/new-arrivals-img3.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'39',1,'2017-07-30 20:08:30','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (229,'Macbook, Laptop','Apple Macbook Retina 23’','290.00',NULL,'assets/images/new-arrivals-img3.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'39',1,'2017-07-30 20:08:32','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (230,'Macbook, Laptop','Apple Macbook Retina 23’','290.00',NULL,'assets/images/new-arrivals-img3.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'39',1,'2017-07-30 20:08:34','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (231,'Macbook, Laptop','Apple Macbook Retina 23’','290.00',NULL,'assets/images/new-arrivals-img3.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'39',1,'2017-07-30 20:08:35','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (232,'Macbook, Laptop','Apple Macbook Retina 23’','290.00',NULL,'assets/images/new-arrivals-img3.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'39',1,'2017-07-30 20:08:37','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (233,'Macbook, Laptop','Apple Macbook Retina 23’','290.00',NULL,'assets/images/new-arrivals-img3.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'39',1,'2017-07-30 20:08:38','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (261,'14吋笔记本','联想','10000',NULL,'assets/images/products/digital/20.jpg',NULL,NULL,NULL,'简介',NULL,NULL,NULL,NULL,NULL,'<p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p><br/></p>',NULL,'13',1,'2017-08-02 21:13:08','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (238,'Macbook, Laptop','Apple Macbook Retina 23’','290',NULL,'assets/images/elec-img1.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'41',1,'2017-07-31 20:52:33','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (239,'Macbook, Laptop','Apple Macbook Retina 23’','290',NULL,'assets/images/elec-img1.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'41',1,'2017-07-31 20:52:34','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (240,'Macbook, Laptop','Apple Macbook Retina 23’','290',NULL,'assets/images/elec-img1.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'41',1,'2017-07-31 20:52:36','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (241,'Macbook, Laptop','Apple Macbook Retina 23’','290',NULL,'assets/images/elec-img1.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'41',1,'2017-07-31 20:52:39','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (246,'Macbook, Laptop',' Apple Macbook Retina 23’ ','100',NULL,'assets/images/elec-img3.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'42',1,'2017-07-31 20:54:05','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (247,'Macbook, Laptop',' Apple Macbook Retina 23’ ','100',NULL,'assets/images/elec-img3.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'42',1,'2017-07-31 20:54:07','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (248,'Macbook, Laptop',' Apple Macbook Retina 23’ ','100',NULL,'assets/images/elec-img3.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'42',1,'2017-07-31 20:54:09','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (249,'Macbook, Laptop',' Apple Macbook Retina 23’ ','100',NULL,'assets/images/elec-img3.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'42',1,'2017-07-31 20:54:11','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (262,'14吋笔记本','联想','10000',NULL,'assets/images/products/digital/20.jpg',NULL,NULL,NULL,'简介',NULL,NULL,NULL,NULL,NULL,'<p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p><br/></p>',NULL,'13',1,'2017-08-02 21:13:25','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (254,'Macbook, Laptop',' Apple Macbook Retina 23’ ','122',NULL,'assets/images/elec-img2.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'43',1,'2017-07-31 20:55:09','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (255,'Macbook, Laptop',' Apple Macbook Retina 23’ ','122',NULL,'assets/images/elec-img2.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'43',1,'2017-07-31 20:55:11','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (256,'Macbook, Laptop',' Apple Macbook Retina 23’ ','122',NULL,'assets/images/elec-img2.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'43',1,'2017-07-31 20:55:13','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (257,'Macbook, Laptop',' Apple Macbook Retina 23’ ','122',NULL,'assets/images/elec-img2.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'43',1,'2017-07-31 20:55:15','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (258,'图1',NULL,NULL,NULL,'assets/images/add-banner.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'45',1,'2017-07-31 20:56:34','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (259,'图2',NULL,NULL,NULL,'assets/images/add-banner.jpg','#',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'45',1,'2017-07-31 20:56:48','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (260,'Apple Macbook Retina 23’ ','Apple','122',NULL,'assets/images/products/digital/20.jpg',NULL,NULL,NULL,'Typi non habent claritatem insitam, est usus legen',NULL,NULL,NULL,NULL,NULL,'<p>								</p><p>Typi non habent claritatem insitam, est usus legentis in iis qui facit \neorum claritatem. Investigationes demonstraverunt lectores legere me \nlius quod ii legunt saepius. Claritas est etiam processus.Typi non habent claritatem insitam, est usus legentis in iis qui facit \neorum claritatem. Investigationes demonstraverunt lectores legere me \nlius quod ii legunt saepius. Claritas est etiam processus.Typi non habent claritatem insitam, est usus legentis in iis qui facit \neorum claritatem. Investigationes demonstraverunt lectores legere me \nlius quod ii legunt saepius. Claritas est etiam processus.Typi non habent claritatem insitam, est usus legentis in iis qui facit \neorum claritatem. Investigationes demonstraverunt lectores legere me \nlius quod ii legunt saepius. Claritas est etiam processus.Typi non habent claritatem insitam, est usus legentis in iis qui facit \neorum claritatem. Investigationes demonstraverunt lectores legere me \nlius quod ii legunt saepius. Claritas est etiam processus.</p><p>						</p>',NULL,'13',1,'2017-08-02 20:35:50','admin','2017-08-02 20:38:30','admin');
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (263,'14吋笔记本','联想','10000',NULL,'assets/images/products/digital/20.jpg',NULL,NULL,NULL,'简介',NULL,NULL,NULL,NULL,NULL,'<p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p><br/></p>',NULL,'13',1,'2017-08-02 21:13:28','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (264,'14吋笔记本','联想','10000',NULL,'assets/images/products/digital/20.jpg',NULL,NULL,NULL,'简介',NULL,NULL,NULL,NULL,NULL,'<p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p><br/></p>',NULL,'13',1,'2017-08-02 21:13:29','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (265,'14吋笔记本','联想','10000','花生壳','assets/images/products/digital/20.jpg',NULL,NULL,NULL,'简介',NULL,NULL,NULL,NULL,NULL,'<p>								</p><p><br/></p><p><br/></p><p><br/></p><p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p>ThinkPad 黑将S5笔记本电脑 黑色 20G4A01NCD</p><p><a target=\"_blank\">i5-6300HQ/Windows 10 家庭版/4GB/500GB+128G SSD/GTX960M 2GB独显/黑色</a></p><p><br/></p><p><br/></p><p><br/></p><p><br/></p><p>						</p>',NULL,'13',1,'2017-08-02 21:13:31','admin','2017-08-09 21:54:45','admin');
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (266,'电子阅读器','亚马孙','122',NULL,'assets/images/products/digital/5.jpg',NULL,NULL,NULL,'水墨屏，不伤眼',NULL,NULL,NULL,NULL,NULL,'Amazon Kindle是由Amazon设计和销售的电子书阅读器（以及软件平台）。第一代Kindle于2007年11月19日发布，用户可以通过无线网络使用 Amazon Kindle 购买、下载和阅读电子书、报纸、杂志、博客及其他电子媒体。',NULL,'14',1,'2017-08-02 21:24:07','admin',NULL,NULL);
-insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`model_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (268,'花生棒Pro','oray上海贝锐信息科技股份有限公司','148',NULL,'/assets/images/products/oray/a.jpg','https://item.taobao.com/item.htm?id=556854194022',NULL,NULL,'购买送电源，花生棒适合没有公网ip，内含一个2G每月的花生壳内网账户，应用在网站，智能家居，设置简单稳定性好，简单好用，现货全国包邮',NULL,NULL,NULL,NULL,NULL,'<p>								</p><p><span style=\"color: rgb(108, 108, 108); font-family: tahoma, arial, &quot;Hiragino Sans GB&quot;, 宋体, sans-serif; font-size: 12px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;\">购买送电源，花生棒适合没有公网ip，内含一个2G每月的花生壳内网账户，应用在网站，智能家居，设置简单稳定性好，简单好用，现货全国包邮</span></p><p>						</p>',NULL,'15',1,'2017-08-09 20:34:19','admin','2017-08-09 20:39:55','admin');
+insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`subject_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (271,'蛋糕1',NULL,NULL,NULL,'美味',NULL,'images/1.jpg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,44,1,'2018-04-19 18:42:01','admin','2018-04-19 18:52:25','admin');
+insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`subject_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (272,'蛋糕2',NULL,NULL,NULL,'甜',NULL,'images/2.jpg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,44,1,'2018-04-19 18:47:48','admin','2018-04-19 18:52:36','admin');
+insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`subject_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (273,'蛋糕3',NULL,NULL,NULL,'快来买',NULL,'images/3.jpg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,46,1,'2018-04-19 18:48:08','admin','2018-04-19 18:54:53','admin');
+insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`subject_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (274,'蛋糕4',NULL,NULL,NULL,'脆',NULL,'images/4.jpg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,47,1,'2018-04-19 18:48:22','admin','2018-04-19 18:54:39','admin');
+insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`subject_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (275,'蛋糕5',NULL,NULL,NULL,'香甜',NULL,'images/5.jpg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,46,1,'2018-04-19 18:48:39','admin','2018-04-19 18:54:33','admin');
+insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`subject_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (276,'蛋糕6',NULL,NULL,NULL,'美味',NULL,'images/6.jpg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,47,1,'2018-04-19 18:50:31','admin','2018-04-19 18:54:26','admin');
+insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`subject_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (277,'Yes, Minister是大臣; Yes,Prime Minister是首相','中英字幕word 笔记 逐行对应','82',NULL,'http://52en.me/doc/YesPrimeMinisterS01.zip','http://52en.me/static/image/banner/yes.jpg','豆瓣9.7分！第一部3季*6+圣诞特别版，第二部2季*8，剧老句不老，经验告诉我们*屏蔽的关键字*问题揭开总有个内幕,内幕揭开还有个黑幕','第一季',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,3,1,'2018-04-20 10:02:23','admin','2018-04-25 20:12:04','admin');
+insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`subject_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (278,'天赋异禀 第一季','中英字幕word 笔记 逐行对应','1',NULL,'http://52en.me/doc/GiftedS01-1-2.zip','http://52en.me/static/image/banner/gift.jpg','X战警剧集，和北极星小姐姐对飙台词？','1-2集.zip',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,3,1,'2018-04-20 10:04:53','admin','2018-04-25 20:12:17','admin');
+insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`subject_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (279,'老友记','中英字幕word 笔记 逐行对应','48',NULL,'http://52en.me/doc/Friends.S01.zip','http://52en.me/static/image/banner/l2.jpg','《老友记》十年间风风雨雨，在嬉笑怒骂中，在离别团聚中，他们向我们讲述着友情、爱情还有生活。','老友记第一季S01.zip',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,3,1,'2018-04-20 10:07:11','admin','2018-04-25 20:13:29','admin');
+insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`subject_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (280,'爱在午夜降临（日落、黎明）前','中英字幕word 笔记 逐行对应','1',NULL,'http://52en.me/doc/1-2-3.zip','http://52en.me/static/image/banner/a3.jpg','话痨电影，学习口语的最佳','1-2-3部.zip',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,3,1,'2018-04-20 10:07:52','admin','2018-04-25 20:13:12','admin');
+insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`subject_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (322,'S01E02',NULL,NULL,NULL,'http://52en.me/res/mp3/yesS01E02.mp3',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'12','13',82,1,'2018-04-23 22:18:55','admin','2018-05-17 14:52:11','admin');
+insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`subject_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (351,'S02E01',NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'14','15',114,1,'2018-04-25 19:57:23','admin','2018-04-25 20:19:37','admin');
+insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`subject_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (352,'西部世界','最热美剧','114',NULL,'http://52en.me/doc/Westworld.S02E01.zip','http://52en.me/res/images/wests02.png','失去了对机器人的控制','S02E02',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,3,1,'2018-04-25 20:04:45','admin','2018-04-25 20:10:37','admin');
+insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`subject_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (383,'是大臣',NULL,NULL,NULL,'n52en/yes1.jpg','https://movie.douban.com/subject/4937405/',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,149,1,'2018-05-16 10:16:23','admin','2018-05-17 09:27:27','admin');
+insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`subject_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (384,'老友记',NULL,NULL,NULL,'n52en/f.jpg','https://movie.douban.com/subject/1393859/',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,149,1,'2018-05-16 10:19:34','admin','2018-05-17 09:33:23','admin');
+insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`subject_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (385,'唐顿庄园',NULL,NULL,NULL,'n52en/dt.jpg','https://movie.douban.com/subject/4769314/',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,149,1,'2018-05-16 10:19:50','admin','2018-05-17 09:28:23','admin');
+insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`subject_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (386,NULL,NULL,NULL,NULL,'n52en/f2l-1.jpg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,150,1,'2018-05-16 11:22:16','admin','2018-05-16 11:26:26','admin');
+insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`subject_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (387,NULL,NULL,NULL,NULL,'n52en/f2r-1.jpg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,151,1,'2018-05-16 11:26:48','admin','2018-05-16 11:27:11','admin');
+insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`subject_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (388,NULL,NULL,NULL,NULL,'n52en/f2r-2.jpg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,151,1,'2018-05-16 11:27:02','admin',NULL,NULL);
+insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`subject_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (389,NULL,NULL,NULL,NULL,'n52en/f3-1.jpg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,152,1,'2018-05-16 14:24:47','admin',NULL,NULL);
+insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`subject_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (390,NULL,NULL,NULL,NULL,'n52en/f3-2.jpg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,152,1,'2018-05-16 14:24:53','admin',NULL,NULL);
+insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`subject_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (391,NULL,NULL,NULL,NULL,'n52en/f3-3.jpg',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,152,1,'2018-05-16 14:24:58','admin',NULL,NULL);
+insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`subject_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (392,'美卡 mecca ',NULL,NULL,NULL,'https://movie.douban.com/subject/4937405/comments?status=P',NULL,NULL,NULL,'这仨忒逗了，随便一凑都是戏。 要是把小寒每次冠冕堂皇的话拿下来倒背如流的话，估计口译press conference部分时简直可以鲜花辞（好听的废话）上再添花。',NULL,NULL,NULL,NULL,NULL,NULL,NULL,154,1,'2018-05-16 14:27:48','admin','2018-05-17 14:20:12','admin');
+insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`subject_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (393,'豆瓣：唐顿庄园',NULL,NULL,NULL,'https://movie.douban.com/subject/4769314/comments?status=P',NULL,NULL,NULL,'伍德与夏洛蒂：无论从时代背景、故事架构、服装造型到台词演技都精致无比。主仆双线交错的叙事内容堪称剧本典范，完全可以收录作为电影学院戏文专业教材。这部厚重感十足的古典精品，是我今年看到的最棒的剧集，期待第二季。',NULL,NULL,NULL,NULL,NULL,NULL,NULL,154,1,'2018-05-16 14:28:01','admin','2018-05-17 14:23:23','admin');
+insert  into `data_1`(`id`,`c1`,`c2`,`c3`,`c4`,`c5`,`c6`,`c7`,`c8`,`c9`,`c10`,`c11`,`c12`,`c13`,`c14`,`c15`,`c16`,`subject_id`,`state`,`create_time`,`create_by`,`update_time`,`update_by`) values (394,'是大臣',NULL,NULL,NULL,'https://movie.douban.com/subject/4937405/comments?status=P',NULL,NULL,NULL,'dSword ：一遍又一遍地看这个系列，每次看都有一种“他的机智赢得了全场热烈的掌声”的感觉，真是一个又一个机智的故事啊。以至于我感觉普通人聊*屏蔽的关键字*的时候有两种，一种是看过这部剧的，一种是没看过的',NULL,NULL,NULL,NULL,NULL,NULL,NULL,154,1,'2018-05-16 14:28:17','admin','2018-05-17 14:21:44','admin');
 
-/*Table structure for table `model` */
+/*Table structure for table `field` */
 
-CREATE TABLE `model` (
+CREATE TABLE `field` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `subject_id` bigint(20) NOT NULL COMMENT '模型id',
+  `name` varchar(200) NOT NULL COMMENT '名称',
+  `type` varchar(10) NOT NULL COMMENT '类型',
+  `seq` int(11) DEFAULT '0' COMMENT '序号',
+  `remark` varchar(200) DEFAULT NULL COMMENT '备注',
+  `width` int(11) DEFAULT NULL COMMENT '列表显示时宽带',
+  `allow_blank` char(1) DEFAULT NULL COMMENT '允许为空',
+  `list_show` char(1) DEFAULT NULL COMMENT '列表显示',
+  `sql` varchar(500) DEFAULT NULL COMMENT '下拉对应sql',
+  `status` int(11) DEFAULT '0' COMMENT '状态',
+  `mapping_data` varchar(20) NOT NULL COMMENT '映射字段',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=442 DEFAULT CHARSET=utf8;
+
+/*Data for the table `field` */
+
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (1,1,'标题','text',1,'标题',200,'0','1',NULL,1,'c1');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (2,1,'内容','editor',5,'',200,'1','0',NULL,1,'c15');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (5,3,'标题','text',10,'标题',200,'0','1','',0,'c1');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (80,44,'名称','text',1,'标题',200,'0','1',NULL,0,'c1');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (81,44,'介绍1','text',2,'',200,'1','1',NULL,0,'c5');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (100,44,'图片','text',7,'',100,'0','1','',0,'c7');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (262,46,'名称','text',1,'标题',200,'0','1',NULL,0,'c1');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (263,46,'介绍1','text',2,'',200,'1','1',NULL,0,'c5');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (264,46,'图片','text',7,'',100,'0','1','',0,'c7');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (265,47,'名称','text',1,'标题',200,'0','1',NULL,0,'c1');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (266,47,'介绍1','text',2,'',200,'1','1',NULL,0,'c5');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (267,47,'图片','text',7,'',100,'0','1','',0,'c7');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (268,3,'广告','text',20,'',100,'0','1','',0,'c2');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (269,3,'简介','text',30,'',100,'0','0','',0,'c7');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (270,3,'下载','text',40,'',100,'0','1','',0,'c8');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (271,3,'下载链接','text',50,'',100,'1','0','',0,'c5');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (272,3,'图片','text',21,'',100,'0','0','',0,'c6');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (273,48,'标题','text',1,'标题1',200,'0','1','',0,'c1');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (274,48,'英文内容','editor',5,'',200,'1','0','',0,'c15');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (275,48,'中文内容','editor',15,'',100,'1','0','',0,'c16');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (276,48,'mp3','text',3,'',100,'1','0','',0,'c5');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (277,3,'匹配栏目','text',15,'',60,'0','1','',0,'c3');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (279,49,'标题','text',1,'标题',200,'0','1',NULL,1,'c1');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (280,49,'mp3','text',3,'',100,'1','0','',0,'c5');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (281,49,'英文内容','editor',5,'',200,'1','0','',0,'c15');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (282,49,'中文内容','editor',15,'',100,'1','0','',0,'c16');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (311,81,'标题','text',1,'标题',200,'0','1',NULL,1,'c1');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (312,81,'mp3','text',3,'',100,'1','0','',0,'c5');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (313,81,'英文内容','editor',5,'',200,'1','0','',0,'c15');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (314,81,'中文内容','editor',15,'',100,'1','0','',0,'c16');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (315,82,'标题','text',1,'标题',200,'0','1',NULL,1,'c1');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (316,82,'mp3','text',3,'',100,'1','0','',0,'c5');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (317,82,'英文内容','editor',5,'',200,'1','0','',0,'c15');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (318,82,'中文内容','editor',15,'',100,'1','0','',0,'c16');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (319,83,'标题','text',1,'标题',200,'0','1',NULL,1,'c1');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (320,83,'mp3','text',3,'',100,'1','0','',0,'c5');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (321,83,'英文内容','editor',5,'',200,'1','0','',0,'c15');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (322,83,'中文内容','editor',15,'',100,'1','0','',0,'c16');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (379,114,'标题','text',1,'标题',200,'0','1',NULL,1,'c1');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (380,114,'mp3','text',3,'',100,'1','0','',0,'c5');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (381,114,'英文内容','editor',5,'',200,'1','0','',0,'c15');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (382,114,'中文内容','editor',15,'',100,'1','0','',0,'c16');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (425,153,'标题','text',1,'标题',200,'0','1',NULL,1,'c1');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (427,149,'图片','text',10,'分辨率308*74,path-upload/tmp/a',200,'0','1','',0,'c5');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (428,149,'链接','text',20,'网页链接',100,'0','1','',0,'c6');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (429,150,'图片','text',10,'631*299',200,'0','1','',0,'c5');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (430,151,'图片','text',10,'308*180,429*155',200,'0','1','',0,'c5');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (431,154,'标题','text',1,'标题',200,'0','1',NULL,1,'c1');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (433,154,'内容','textarea',11,'',100,'1','0','',0,'c9');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (434,154,'链接','text',21,'',100,'0','1','',0,'c5');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (435,152,'图片','text',10,'316*117',100,'0','1','',0,'c5');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (436,153,'匹配栏目','text',11,'',60,'0','1','',0,'c2');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (437,153,'广告','text',21,'',100,'0','1','',0,'c5');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (438,153,'图片','text',31,'220*n',100,'0','0','',0,'c3');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (439,153,'下载','text',41,'',100,'1','1','',0,'c4');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (440,153,'下载链接','text',51,'',1001,'1','0','',0,'c6');
+insert  into `field`(`id`,`subject_id`,`name`,`type`,`seq`,`remark`,`width`,`allow_blank`,`list_show`,`sql`,`status`,`mapping_data`) values (441,149,'名称','text',5,'',100,'0','1','',0,'c1');
+
+/*Table structure for table `subject` */
+
+CREATE TABLE `subject` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `name` varchar(200) NOT NULL,
-  `table_name` varchar(50) DEFAULT NULL,
-  `remark` varchar(400) DEFAULT NULL,
-  `leaf` bit(1) DEFAULT NULL,
-  `seq` int(11) DEFAULT NULL,
-  `parent_id` bigint(20) DEFAULT NULL,
+  `name` varchar(200) NOT NULL COMMENT '栏目名称',
+  `table_name` varchar(50) DEFAULT NULL COMMENT '存放数据的表如data_1',
+  `remark` varchar(400) DEFAULT NULL COMMENT '备注',
+  `leaf` bit(1) DEFAULT NULL COMMENT '是否叶子节点',
+  `seq` int(11) DEFAULT NULL COMMENT '排序序号',
+  `parent_id` bigint(20) DEFAULT NULL COMMENT '父节点',
   `nav` char(1) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=155 DEFAULT CHARSET=utf8;
 
-/*Data for the table `model` */
+/*Data for the table `subject` */
 
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (1,'首页','data_0','首页各种栏目配置','\0',10,0,'1');
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (2,'主题市场','data_0','商品主题分类','\0',20,0,'1');
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (3,'卡片电脑 & 树莓派 ','data_1','','\0',10,2,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (4,'内网穿透 & 花生壳','data_1','','\0',20,2,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (5,'Java & js','data_1','','\0',30,2,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (6,'Google & Guice','data_1','','\0',40,2,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (7,'MyBatis & MySQL','data_1','','\0',50,2,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (8,'Servlet & Tomcat','data_1','','\0',60,2,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (9,'JSP & JSTL','data_1','','\0',70,2,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (10,'jQuery & Ajax','data_1','','\0',80,2,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (11,'Html & CSS ','data_1','','\0',90,2,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (12,'Maven & Git','data_1','','\0',100,2,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (13,'Raspberry Pi','data_1','','\0',10,3,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (14,'Raspbian','data_1','','\0',20,3,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (15,'花生棒Pro','data_1','','\0',10,4,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (16,'花生壳','data_1','','\0',20,4,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (17,'JDK','data_1','','\0',10,5,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (18,'框架','data_1','','\0',20,5,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (19,'翻墙','data_1','','\0',10,6,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (20,'IOC注入','data_1','','\0',20,6,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (21,'ORM','data_1','','\0',10,7,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (22,'下载','data_1','','\0',20,7,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (23,'接口','data_1','','\0',10,8,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (24,'web容器','data_1','','\0',20,8,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (25,'教程','data_1','','\0',10,9,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (26,'模板','data_1','','\0',20,9,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (27,'插件','data_1','','\0',10,10,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (28,'异步','data_1','','\0',20,10,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (29,'html5','data_1','','\0',10,11,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (30,'css3','data_1','','\0',20,11,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (31,'架构','data_1','','\0',10,12,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (32,'库','data_1','','\0',20,12,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (33,'版本管理','data_1','','\0',20,12,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (34,'轮播图','data_0','','\0',10,1,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (35,'中间3商品','data_0','','\0',20,1,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (36,'本月热卖','data_0','','\0',30,1,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (37,'新上架','data_1','','\0',10,36,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (38,'特色','data_1','','\0',20,36,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (39,'经典','data_1','','\0',30,36,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (40,'热门商品','data_1','','\0',40,1,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (41,'手机','data_1','','\0',10,40,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (42,'便携式电脑','data_1','','\0',20,40,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (43,'台式电脑','data_1','','\0',30,40,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (44,'左侧抢购','data_0','','\0',5,36,NULL);
-insert  into `model`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (45,'左侧轮播','data_1','','\0',5,40,NULL);
+insert  into `subject`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (1,'咖啡站','data_1','咖啡站栏目配置','\0',10,0,NULL);
+insert  into `subject`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (2,'52en.me','data_1','我爱英语','\0',20,0,NULL);
+insert  into `subject`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (3,'首页','data_1','','\0',10,2,NULL);
+insert  into `subject`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (36,'首页','data_1','','\0',30,1,NULL);
+insert  into `subject`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (44,'Meun3','data_1','','\0',5,36,NULL);
+insert  into `subject`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (46,'Meun2','data_1','','\0',5,36,NULL);
+insert  into `subject`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (47,'Meun1','data_1','','\0',5,36,NULL);
+insert  into `subject`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (48,'老友记','data_1','','\0',20,2,NULL);
+insert  into `subject`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (49,'生活大爆炸','data_1','','\0',30,2,NULL);
+insert  into `subject`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (81,'唐顿庄园','data_1','','\0',40,2,NULL);
+insert  into `subject`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (82,'是大臣','data_1','','\0',50,2,NULL);
+insert  into `subject`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (83,'权利的游戏','data_1','','\0',60,2,NULL);
+insert  into `subject`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (114,'西部世界第二季','data_1','','\0',70,2,NULL);
+insert  into `subject`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (148,'新52en站','data_1','30','\0',30,0,NULL);
+insert  into `subject`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (149,'首页F1图片','data_1','','\0',10,148,NULL);
+insert  into `subject`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (150,'首页F2左1','data_1','','\0',20,148,NULL);
+insert  into `subject`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (151,'首页F2右2','data_1','','\0',30,148,NULL);
+insert  into `subject`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (152,'首页F3图片','data_1','','\0',40,148,NULL);
+insert  into `subject`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (153,'文章','data_1','','\0',60,148,NULL);
+insert  into `subject`(`id`,`name`,`table_name`,`remark`,`leaf`,`seq`,`parent_id`,`nav`) values (154,'轮播','data_1','','\0',50,148,NULL);
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;

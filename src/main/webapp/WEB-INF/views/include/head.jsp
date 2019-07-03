@@ -10,13 +10,10 @@
 <script src="${ctxStatic}/jquery/jquery.form.min.js" language="javascript" type="text/javascript"></script>
 <script src="${ctxStatic}/js/comm.js" language="javascript" type="text/javascript"></script>
 
+<script src="${ctxStatic}/js/google-maps.js" type="text/javascript"></script>
+<link href="${ctxStatic}/css/font-awesome.css" type="text/css" rel="stylesheet" />
 
-<link href="${ctxStatic}/bootstrap2/css_default/bootstrap.css" type="text/css" rel="stylesheet" />
-<script src="${ctxStatic}/bootstrap2/js/bootstrap.min.js" type="text/javascript"></script>
-
-
-<script src="${ctxStatic}/jerichotab/js/jquery.jerichotab.js" type="text/javascript"></script>
-<link href="${ctxStatic}/jerichotab/css/jquery.jerichotab.css" rel="stylesheet" />
+<link href="${ctxStatic}/css/form.css" type="text/css" rel="stylesheet" />
 
 
 <script type="text/javascript">var ctx = '${ctx}', ctxStatic='${ctxStatic}';</script>

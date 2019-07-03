@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-	id="WebApp_ID" version="3.0">
-	<display-name>j4</display-name>
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	version="3.0">
+	<display-name>easy</display-name>
 	<welcome-file-list>
-		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>login.jsp</welcome-file>
 	</welcome-file-list>
-
+	<!-- 编码拦截器 -->
 	<filter>
 		<filter-name>CharsetEncodingFilter</filter-name>
-		<filter-class>com.j4.filter.CharsetEncodingFilter</filter-class>
+		<filter-class>easycms.filter.CharsetEncodingFilter</filter-class>
+		<init-param>
+			<param-name>charsetEncoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
 	</filter>
 	<filter-mapping>
 		<filter-name>CharsetEncodingFilter</filter-name>
@@ -33,58 +37,6 @@
 		<filter-name>ShiroFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-	<!--ehcache 页面缓存过滤器,要在 UrlRewriteFilter前面 -->
-	<filter>
-		<filter-name>PageCachingFilter</filter-name>
-		<filter-class>net.sf.ehcache.constructs.web.filter.SimplePageCachingFilter</filter-class>
-		<init-param>
-			<param-name>cacheName</param-name>
-			<param-value>SimplePageCachingFilter</param-value>
-		</init-param>
-	</filter>
-	<filter-mapping>
-		<filter-name>PageCachingFilter</filter-name>
-		<url-pattern>*.html</url-pattern>
-	</filter-mapping>
-<!-- 	<filter-mapping>
-		<filter-name>PageCachingFilter</filter-name>
-		<url-pattern>*.css</url-pattern>
-	</filter-mapping>
-	<filter-mapping>
-		<filter-name>PageCachingFilter</filter-name>
-		<url-pattern>*.js</url-pattern>
-	</filter-mapping>
- -->	<filter>
-		<filter-name>UrlRewriteFilter</filter-name>
-		<filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
-		<!-- 自定义配置文件的路径,是相对context的路径,(默认位置 /WEB-INF/urlrewrite.xml) -->
-		<init-param>
-			<param-name>confPath</param-name>
-			<param-value>/WEB-INF/urlrewrite.xml</param-value>
-		</init-param>
-
-		<!-- 设置日志级别（将被记录到日志中） 可以为: TRACE, DEBUG, INFO (default), WARN, ERROR, FATAL, 
-			log4j, commons, slf4j, 比如 sysout:DEBUG（设置到控制台调试输出级别） (默认级别 WARN) -->
-		<init-param>
-			<param-name>logLevel</param-name>
-			<param-value>DEBUG</param-value>
-		</init-param>
-	</filter>
-
-	<filter-mapping>
-		<filter-name>UrlRewriteFilter</filter-name>
-		<url-pattern>/front/*</url-pattern>
-		<dispatcher>REQUEST</dispatcher>
-		<dispatcher>FORWARD</dispatcher>
-	</filter-mapping>
-	<filter-mapping>
-		<filter-name>UrlRewriteFilter</filter-name>
-		<url-pattern>/index.html</url-pattern>
-		<dispatcher>REQUEST</dispatcher>
-		<dispatcher>FORWARD</dispatcher>
-	</filter-mapping>
-
-
 	<session-config>
 		<session-timeout>30</session-timeout>
 	</session-config>

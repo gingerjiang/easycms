@@ -1,21 +1,20 @@
 <%@ page contentType="text/html;charset=UTF-8"%>
 <%@ include file="/WEB-INF/views/include/taglib.jsp"%>
-<!doctype html>
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
 <title>管理后台登录页面</title>
-<link rel="stylesheet" href="${ctx}/static/login/login.css">
+<link rel="stylesheet" href="${ctx}/static/login/login.css" />
 </head>
 <body onload="document.getElementsByTagName('input')[0].focus();">
 	<div class="login_body">
 		<div class="login_form clearfix">
 			<form action="login" method="post">
 				<p>
-					<input type="text" name="username" placeholder="帐号" title="账号" value=""/>
+					<input type="text" name="username" placeholder="帐号" title="账号" value="root"/>
 				</p>
 				<p>
-					<input type="password" name="password" placeholder="密码" title="密码" value=""/>
+					<input type="password" name="password" placeholder="密码" title="密码" value="easycms"/>
 				</p>
 				<p>
 					<input type="submit" value="登  录" />

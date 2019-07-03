@@ -17,17 +17,17 @@
 		<setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString" />
 	</settings>
 	<typeAliases>
-		<typeAlias alias="Model" type="com.j4.cms.obj.Model" />
-		<typeAlias alias="Column" type="com.j4.cms.obj.Column" />
-		<typeAlias alias="Cfg" type="com.j4.cms.obj.Cfg" />
-		<typeAlias alias="Data" type="com.j4.cms.obj.Data" />
-		<typeAlias alias="Node" type="com.j4.cms.obj.Node" />
-		<typeAlias alias="Combo" type="com.j4.cms.obj.Combo" />
+		<typeAlias alias="Subject" type="easycms.obj.Subject" />
+		<typeAlias alias="Field" type="easycms.obj.Field" />
+		<typeAlias alias="Cfg" type="easycms.obj.Cfg" />
+		<typeAlias alias="Data" type="easycms.obj.Data" />
+		<typeAlias alias="Node" type="easycms.obj.Node" />
+		<typeAlias alias="Combo" type="easycms.obj.Combo" />
 	</typeAliases>
 
 	<!-- - - - - - - 数据库环境配置- - - - - - - - - -->
 	<environments default="environments">
-		<environment id="j4">
+		<environment id="easycms">
 			<transactionManager type="JDBC" />
 			<dataSource type="POOLED">
 				<property name="driver" value="com.mysql.jdbc.Driver" />
@@ -46,15 +46,15 @@
 	</environments>
 
 
-	<!-- - - - - - - -映射文件路径- - - - - - -->
+	<!-- - - - - - - -映射文件路径- - - field- - - -->
 	<mappers>
-		<mapper resource="com/j4/common/mapper/common_SqlMap.xml" />
-		<mapper resource="com/j4/cms/mapper/ModelMapper.xml" />
-		<mapper resource="com/j4/cms/mapper/ColumnMapper.xml" />
-		<mapper resource="com/j4/cms/mapper/CfgMapper.xml" />
-		<mapper resource="com/j4/cms/mapper/DataMapper.xml" />
-		<mapper resource="com/j4/cms/mapper/CountMapper.xml" />
-		<mapper resource="com/j4/cms/mapper/ComboMapper.xml" />
+		<mapper resource="mappings/common/common_SqlMap.xml" />
+		<mapper resource="mappings/easycms/SubjectMapper.xml" />
+		<mapper resource="mappings/easycms/FieldMapper.xml" />
+		<mapper resource="mappings/easycms/CfgMapper.xml" />
+		<mapper resource="mappings/easycms/DataMapper.xml" />
+		<mapper resource="mappings/easycms/CountMapper.xml" />
+		<mapper resource="mappings/easycms/ComboMapper.xml" />
 	</mappers>
 
 </configuration>  

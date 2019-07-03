@@ -13,8 +13,8 @@
 	<function>
 		<description>反射获取值</description>
 		<name>getProperty</name>
-		<function-class>com.j4.util.BeanUtil</function-class>
-		<function-signature>java.lang.String getProperty(com.j4.cms.obj.Data, java.lang.String)</function-signature>
+		<function-class>easycms.util.BeanUtil</function-class>
+		<function-signature>java.lang.String getProperty(easycms.obj.Data, java.lang.String)</function-signature>
 		<example>${fns:getProperty(data, name)}</example>
 	</function>
 </taglib>
